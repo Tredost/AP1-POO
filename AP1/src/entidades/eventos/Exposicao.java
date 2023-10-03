@@ -11,7 +11,7 @@ public class Exposicao extends Evento {
         this.idadeMinima = idadeMinima;
         this.duracaoDias = duracaoDias;
     }
-
+    
     public boolean isIngressoDisponivel(TipoIngresso tipoIngresso, int quantidade) {
         if (tipoIngresso.equals(TipoIngresso.INTEIRA) && quantidade <= this.getIngressosInteira()){
             return true;
@@ -22,31 +22,9 @@ public class Exposicao extends Evento {
             return false;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public double venderIngresso(TipoIngresso tipoIngresso, int quantidade, boolean descontoSocial) {
 
-        String nomeEvento = this.getNomeEvento();
-        IngExpo ingresso = new IngExpo(nomeEvento, tipoIngresso, descontoSocial);
+        IngExpo ingresso = new IngExpo(this, tipoIngresso, descontoSocial);
         double valor = ingresso.getPreco();
 
         if (tipoIngresso.equals(TipoIngresso.INTEIRA)){
@@ -59,42 +37,8 @@ public class Exposicao extends Evento {
             ingressosMeia -= quantidade;
             this.setIngressosMeia(ingressosMeia);
         }
-
         return valor * quantidade;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // GETTERS
 

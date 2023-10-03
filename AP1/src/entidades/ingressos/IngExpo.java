@@ -9,40 +9,6 @@ public class IngExpo extends Ingresso{
         this.descontoSocial = descontoSocial;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public double getPreco(){
         if(this.descontoSocial){
             return 0;
@@ -51,50 +17,6 @@ public class IngExpo extends Ingresso{
         } else {
             return this.getEvento().getPrecoCheio() / 2; }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // GETTERS
 

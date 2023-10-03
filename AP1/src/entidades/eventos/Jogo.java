@@ -23,11 +23,9 @@ public class Jogo extends Evento {
             return false;
     }
 
-
     public double venderIngresso(TipoIngresso tipoIngresso, int quantidade, int descontoTorcedor) {
 
-        String nomeEvento = this.getNomeEvento();
-        IngJogo ingresso = new IngJogo(nomeEvento, tipoIngresso, descontoTorcedor);
+        IngJogo ingresso = new IngJogo(this, tipoIngresso, descontoTorcedor);
         double valor = ingresso.getPreco();
 
         if (tipoIngresso.equals(TipoIngresso.INTEIRA)){
@@ -40,7 +38,6 @@ public class Jogo extends Evento {
             ingressosMeia -= quantidade;
             this.setIngressosMeia(ingressosMeia);
         }
-
         return valor * quantidade;
     }
 

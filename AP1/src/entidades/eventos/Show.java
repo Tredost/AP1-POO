@@ -37,8 +37,7 @@ public class Show extends Evento {
 
     public double venderIngresso(TipoIngresso tipoIngresso, int quantidade, EspacoEnum espacoEnum) {
 
-        String nomeEvento = this.getNomeEvento();
-        IngShow ingresso = new IngShow(nomeEvento, tipoIngresso, espacoEnum);
+        IngShow ingresso = new IngShow(this, tipoIngresso, espacoEnum);
         double valor = ingresso.getPreco();
 
         if (tipoIngresso.equals(TipoIngresso.INTEIRA)){
