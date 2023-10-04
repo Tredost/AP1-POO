@@ -71,11 +71,11 @@ public abstract class Evento {
     }
 
     public void setDataEvento(String novaData) {
-        this.nomeEvento = novaData;
+        this.dataEvento = novaData;
     }
 
     public void setLocalEvento(String novoLocal) {
-        this.nomeEvento = novoLocal;
+        this.localEvento = novoLocal;
     }
 
     public void setIngressosInteira(int novaQntd) {

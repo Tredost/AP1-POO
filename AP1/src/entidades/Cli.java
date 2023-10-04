@@ -5,6 +5,7 @@ import entidades.eventos.Exposicao;
 import entidades.eventos.Jogo;
 import entidades.eventos.Show;
 import entidades.ingressos.TipoIngresso;
+import entidades.ingressos.IngShow.EspacoEnum;
 
 public class Cli {
 Scanner leitor = new Scanner(System.in);
@@ -12,10 +13,10 @@ Scanner leitor = new Scanner(System.in);
     Jogo jogo;
     Exposicao expo;
 
-public static void cadastrarEvento(Scanner leitor) {
+public static void cadastrarEvento(Scanner leitor, Exposicao expo, Show show, Jogo jogo) {
 
-    System.out.println("Qual tipo de evento deseja cadastar?\n  1 - Exposição\n  2 - Jogo\n  3 - Show");
-    int tipo = leitor.nextInt();
+    System.out.println("Qual tipo de evento deseja cadastar?\n  1 - Exposição\n  2 - Jogo\n  3 - Show\n");
+    int tipoEvento = leitor.nextInt();
 
     System.out.println("Qual nome do evento?\n");
     String nomeEvento = leitor.next();
@@ -35,7 +36,7 @@ public static void cadastrarEvento(Scanner leitor) {
     System.out.println("Qual o preço cheio do ingresso?\n");
     double precoCheio = leitor.nextDouble();
 
-    switch (tipo) {
+    switch (tipoEvento) {
 
         case 1:
             System.out.println("Qual a idade mínima?\n");
@@ -44,7 +45,14 @@ public static void cadastrarEvento(Scanner leitor) {
             System.out.println("Quantos dias de duração?\n");
             int duracaoDias = leitor.nextInt();
 
-            Exposicao expo = new Exposicao(nomeEvento, dataEvento, localEvento, ingressosInteira, ingressosMeia, precoCheio, idadeMinima, duracaoDias);
+            expo.setNomeEvento(nomeEvento);
+            expo.setDataEvento(dataEvento);
+            expo.setLocalEvento(localEvento);
+            expo.setIngressosInteira(ingressosInteira);
+            expo.setIngressosMeia(ingressosMeia);
+            expo.setPrecoCheio(precoCheio);
+            expo.setIdadeMinima(idadeMinima);
+            expo.setDuracaoDias(duracaoDias);
             System.out.println("Nome: " + expo.getNomeEvento());
             System.out.println("Data: " + expo.getDataEvento());
             System.out.println("Local: " + expo.getLocalEvento());
@@ -65,7 +73,15 @@ public static void cadastrarEvento(Scanner leitor) {
             System.out.println("Qual a segunda equipe?\n");
             String equipe2 = leitor.next();
 
-            Jogo jogo = new Jogo(nomeEvento, dataEvento, localEvento, ingressosInteira, ingressosMeia, precoCheio, esporte, equipe1, equipe2);
+            jogo.setNomeEvento(nomeEvento);
+            jogo.setDataEvento(dataEvento);
+            jogo.setLocalEvento(localEvento);
+            jogo.setIngressosInteira(ingressosInteira);
+            jogo.setIngressosMeia(ingressosMeia);
+            jogo.setPrecoCheio(precoCheio);
+            jogo.setEsporte(esporte);
+            jogo.setEquipe1(equipe1);
+            jogo.setEquipe2(equipe2);
             System.out.println("Nome: " + jogo.getNomeEvento());
             System.out.println("Data: " + jogo.getDataEvento());
             System.out.println("Local: " + jogo.getLocalEvento());
@@ -84,7 +100,14 @@ public static void cadastrarEvento(Scanner leitor) {
             System.out.println("Qual o gênero musical?\n");
             String generoMusical = leitor.next();
 
-            Show show = new Show(nomeEvento, dataEvento, localEvento, ingressosInteira, ingressosMeia, precoCheio, nomeArtista, generoMusical);
+            show.setNomeEvento(nomeEvento);
+            show.setDataEvento(dataEvento);
+            show.setLocalEvento(localEvento);
+            show.setIngressosInteira(ingressosInteira);
+            show.setIngressosMeia(ingressosMeia);
+            show.setPrecoCheio(precoCheio);
+            show.setNomeArtista(nomeArtista);
+            show.setGeneroMusical(generoMusical);
             System.out.println("Nome: " + show.getNomeEvento());
             System.out.println("Data: " + show.getDataEvento());
             System.out.println("Local: " + show.getLocalEvento());
@@ -96,40 +119,139 @@ public static void cadastrarEvento(Scanner leitor) {
             break;
 
         default:
-        System.out.println("OPÇÃO NÃO EXISTE!");
+            System.out.println("OPÇÃO NÃO EXISTE!");
     }
 
 
 }
 
+public static void mostrarEvento(Evento evento) {
+    if (evento instanceof Show) {
+        Show show = (Show) evento;
+        System.out.println("Nome: " + show.getNomeEvento());
+        System.out.println("Data: " + show.getDataEvento());
+        System.out.println("Local: " + show.getLocalEvento());
+        System.out.println("Ings. Inteira: " + show.getIngressosInteira());
+        System.out.println("Ings. Meia: " + show.getIngressosMeia());
+        System.out.println("Valor: " + show.getPrecoCheio());
+        System.out.println("Artista: " + show.getNomeArtista());
+        System.out.println("Gênero musical: " + show.getGeneroMusical());
 
-public static void comprarIngresso(Scanner leitor) {
+    } else if (evento instanceof Exposicao) {
 
-    System.out.println("Qual evento?\n");
-    String nomeEvento = leitor.next();
+        Exposicao expo = (Exposicao) evento;
+        System.out.println("Nome: " + expo.getNomeEvento());
+        System.out.println("Data: " + expo.getDataEvento());
+        System.out.println("Local: " + expo.getLocalEvento());
+        System.out.println("Ings. Inteira: " + expo.getIngressosInteira());
+        System.out.println("Ings. Meia: " + expo.getIngressosMeia());
+        System.out.println("Valor: " + expo.getPrecoCheio());
+        System.out.println("Idade mínima: " + expo.getIdadeMinima());
+        System.out.println("Duração: " + expo.getDuracaoDias());
 
-    System.out.println("Qual evento?\n");
+    } else if (evento instanceof Jogo) {
+        Jogo jogo = (Jogo) evento;
+        System.out.println("Nome: " + jogo.getNomeEvento());
+        System.out.println("Data: " + jogo.getDataEvento());
+        System.out.println("Local: " + jogo.getLocalEvento());
+        System.out.println("Ings. Inteira: " + jogo.getIngressosInteira());
+        System.out.println("Ings. Meia: " + jogo.getIngressosMeia());
+        System.out.println("Valor: " + jogo.getPrecoCheio());
+        System.out.println("Esporte: " + jogo.getEsporte());
+        System.out.println("Equipe 1: " + jogo.getEquipe1());
+        System.out.println("Equipe 2: " + jogo.getEquipe2());
+    }
+    else { System.out.println("Tipo de evento desconhecido"); }
+}
+
+
+
+
+
+public static void comprarIngresso(Scanner leitor, Exposicao expo, Show show, Jogo jogo) {
+
+    System.out.println("Qual tipo de evento?\n  1 - Exposição\n  2 - Jogo\n  3 - Show\n");
+    int tipoEvento = leitor.nextInt();
+
+    System.out.println("Quantos ingressos deseja?\n");
     int quantidade = leitor.nextInt();
 
     System.out.println("Qual o tipo de ingresso deseja comprar?\n Digite INTEIRA ou MEIA\n");
-    TipoIngresso tipo;
+    TipoIngresso tipoIngresso;
     String tipoString = leitor.next();
 
     while (true) {
     if (tipoString.equalsIgnoreCase("INTEIRA")) {
-        tipo = TipoIngresso.INTEIRA;
+        tipoIngresso = TipoIngresso.INTEIRA;
         break;
     } else if (tipoString.equalsIgnoreCase("MEIA")) {
-        tipo = TipoIngresso.MEIA;
+        tipoIngresso = TipoIngresso.MEIA;
         break;
     } else {
-        System.out.println("Tipo de ingresso inválido. Digite INTEIRA ou MEIA."); }
+        System.out.println("Tipo de ingresso inválido. Digite INTEIRA ou MEIA.\n"); }
     }
 
+    switch (tipoEvento) {
+
+        case 1:
+            System.out.println("Se possui desconto social digite '1'!\n");
+            int descontoInt = leitor.nextInt();
+            boolean descontoSocial;
+
+            if (descontoInt == 1) { descontoSocial = true; }
+            else { descontoSocial = false; }
+
+            if (expo.isIngressoDisponivel(tipoIngresso, quantidade)) {
+                double precoExpo = expo.venderIngresso(tipoIngresso, quantidade, descontoSocial);
+                System.out.println("Compra realizada! Valor: R$ " + precoExpo + "\n");
+
+            }
+            else { System.out.println("Não existem ingressos disponíveis para sua compra :( "); }
+            break;
+
+        case 2:
+            System.out.println("Se possui desconto torcedor digite aqui!\n");
+            int descontoTorcedor = leitor.nextInt();
+
+            if (jogo.isIngressoDisponivel(tipoIngresso, quantidade)) {
+                double precoJogo = jogo.venderIngresso(tipoIngresso, quantidade, descontoTorcedor);
+                System.out.println("Compra realizada! Valor: R$ " + precoJogo + "\n");
+            }
+            else { System.out.println("Não existem ingressos disponíveis para sua compra :( "); }
+            break;
+
+        case 3:
+            System.out.println("Qual o espaço do show deseja ficar? Digite PISTA ou CAMAROTE\n");
+            EspacoEnum espacoEnum;
+            String espacoString = leitor.next();
+
+            while (true) {
+            if (espacoString.equalsIgnoreCase("PISTA")) {
+                espacoEnum = EspacoEnum.PISTA;
+                break;
+            } else if (espacoString.equalsIgnoreCase("CAMAROTE")) {
+                espacoEnum = EspacoEnum.CAMAROTE;
+                break;
+            } else {
+                System.out.println("Tipo de ingresso inválido. Digite INTEIRA ou MEIA.\n"); }
+            }
+
+            if (jogo.isIngressoDisponivel(tipoIngresso, quantidade)) {
+                double precoShow = show.venderIngresso(tipoIngresso, quantidade, espacoEnum);
+                System.out.println("Compra realizada! Valor: R$ " + precoShow + "\n");
+            }
+            else { System.out.println("Não existem ingressos disponíveis para sua compra :( "); }
+            break;
+
+        default:
+            System.out.println("OPÇÃO NÃO EXISTE!\n");
+
+    }
 
 }
 
 }
+
 
 
 /*   String nomeEvento, String dataEvento, String localEvento, int ingressosInteira, int ingressosMeia, double precoCheio, String nomeArtista,
