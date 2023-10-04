@@ -7,7 +7,7 @@ import entidades.ingressos.TipoIngresso;
 public class Show extends Evento {
     private String nomeArtista, generoMusical;
 
-    public Show(String nomeEvento, String dataEvento, String localEvento, int ingressosInteira, int ingressosMeia, double precoCheio, int idadeMinima, int duracaoDias, String nomeArtista, String generoMusical) {
+    public Show(String nomeEvento, String dataEvento, String localEvento, int ingressosInteira, int ingressosMeia, double precoCheio, String nomeArtista, String generoMusical) {
         super(nomeEvento, dataEvento, localEvento, ingressosInteira, ingressosMeia, precoCheio);
         this.nomeArtista = nomeArtista;
         this.generoMusical = generoMusical;

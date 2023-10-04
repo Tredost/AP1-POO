@@ -11,7 +11,7 @@ public class Exposicao extends Evento {
         this.idadeMinima = idadeMinima;
         this.duracaoDias = duracaoDias;
     }
-    
+
     public boolean isIngressoDisponivel(TipoIngresso tipoIngresso, int quantidade) {
         if (tipoIngresso.equals(TipoIngresso.INTEIRA) && quantidade <= this.getIngressosInteira()){
             return true;
