@@ -24,7 +24,7 @@ public class Show extends Evento {
 
 
 
-    public boolean isIngressoDisponivel(TipoIngresso tipoIngresso, int quantidade) {
+    /*public boolean isIngressoDisponivel(TipoIngresso tipoIngresso, int quantidade) {
         if (tipoIngresso.equals(TipoIngresso.INTEIRA) && quantidade <= this.getIngressosInteira()){
             return true;
         }
@@ -32,7 +32,7 @@ public class Show extends Evento {
             return true;
         }
             return false;
-    }
+    } */
 
 
     public double venderIngresso(TipoIngresso tipoIngresso, int quantidade, EspacoEnum espacoEnum) {

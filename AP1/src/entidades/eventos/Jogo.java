@@ -13,7 +13,7 @@ public class Jogo extends Evento {
         this.equipe2 = equipe2;
     }
 
-    public boolean isIngressoDisponivel(TipoIngresso tipoIngresso, int quantidade) {
+    /* public boolean isIngressoDisponivel(TipoIngresso tipoIngresso, int quantidade) {
         if (tipoIngresso.equals(TipoIngresso.INTEIRA) && quantidade <= this.getIngressosInteira()){
             return true;
         }
@@ -21,7 +21,7 @@ public class Jogo extends Evento {
             return true;
         }
             return false;
-    }
+    } */
 
     public double venderIngresso(TipoIngresso tipoIngresso, int quantidade, int descontoTorcedor) {
 

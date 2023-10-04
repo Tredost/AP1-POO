@@ -164,10 +164,6 @@ public static void mostrarEvento(Evento evento) {
     else { System.out.println("Tipo de evento desconhecido"); }
 }
 
-
-
-
-
 public static void comprarIngresso(Scanner leitor, Exposicao expo, Show show, Jogo jogo) {
 
     System.out.println("Qual tipo de evento?\n  1 - Exposição\n  2 - Jogo\n  3 - Show\n");

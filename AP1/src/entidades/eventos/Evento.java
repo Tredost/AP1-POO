@@ -15,7 +15,7 @@ public abstract class Evento {
         this.precoCheio = precoCheio;
     }
 
-    public abstract boolean isIngressoDisponivel(TipoIngresso tipoIngresso, int quantidade); /*{
+    public boolean isIngressoDisponivel(TipoIngresso tipoIngresso, int quantidade) {
         if (tipoIngresso.equals(TipoIngresso.INTEIRA) && quantidade <= this.ingressosInteira){
             return true;
         }
@@ -23,7 +23,7 @@ public abstract class Evento {
             return true;
         }
             return false;
-    } */
+    }
 
     public double venderIngresso(TipoIngresso tipoIngresso, int quantidade) {
         double valor;
