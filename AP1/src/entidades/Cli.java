@@ -12,7 +12,7 @@ Scanner leitor = new Scanner(System.in);
     Jogo jogo;
     Exposicao expo;
 
-public static void cadastarEvento(Scanner leitor) {
+public static void cadastrarEvento(Scanner leitor) {
 
     System.out.println("Qual tipo de evento deseja cadastar?\n  1 - Exposição\n  2 - Jogo\n  3 - Show");
     int tipo = leitor.nextInt();
@@ -72,9 +72,9 @@ public static void cadastarEvento(Scanner leitor) {
             System.out.println("Ings. Inteira: " + jogo.getIngressosInteira());
             System.out.println("Ings. Meia: " + jogo.getIngressosMeia());
             System.out.println("Valor: " + jogo.getPrecoCheio());
-            System.out.println("Idade mínima: " + jogo.getEsporte());
-            System.out.println("Idade mínima: " + jogo.getEquipe1());
-            System.out.println("Duração: " + jogo.getEquipe2());
+            System.out.println("Esporte: " + jogo.getEsporte());
+            System.out.println("Equipe 1: " + jogo.getEquipe1());
+            System.out.println("Equipe 2: " + jogo.getEquipe2());
             break;
 
         case 3:
@@ -91,8 +91,8 @@ public static void cadastarEvento(Scanner leitor) {
             System.out.println("Ings. Inteira: " + show.getIngressosInteira());
             System.out.println("Ings. Meia: " + show.getIngressosMeia());
             System.out.println("Valor: " + show.getPrecoCheio());
-            System.out.println("Idade mínima: " + show.getNomeArtista());
-            System.out.println("Duração: " + show.getGeneroMusical());
+            System.out.println("Artista: " + show.getNomeArtista());
+            System.out.println("Gênero musical: " + show.getGeneroMusical());
             break;
 
         default:
