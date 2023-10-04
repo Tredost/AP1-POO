@@ -238,7 +238,7 @@ public static void comprarIngresso(Scanner leitor, Exposicao expo, Show show, Jo
                 espacoString = leitor.next();
             }
 
-            if (jogo.isIngressoDisponivel(tipoIngresso, quantidade)) {
+            if (show.isIngressoDisponivel(tipoIngresso, quantidade)) {
                 double precoShow = show.venderIngresso(tipoIngresso, quantidade, espacoEnum);
                 System.out.println("Compra realizada! Valor: R$ " + precoShow + "\n");
             }
