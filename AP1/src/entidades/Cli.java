@@ -103,19 +103,31 @@ public static void cadastrarEvento(Scanner leitor) {
 }
 
 
-/*public static void comprarIngresso(Scanner leitor) {
-    System.out.println("Qual o tipo de ingresso deseja cadastar?\n Digite INTEIRA ou MEIA\n");
-    TipoIngresso tipo = leitor.next();
+public static void comprarIngresso(Scanner leitor) {
 
-    System.out.println("Qual nome do evento?\n");
+    System.out.println("Qual evento?\n");
     String nomeEvento = leitor.next();
 
-    System.out.println("Qual a data do evento?\n");
-    String dataEvento = leitor.next();
+    System.out.println("Qual evento?\n");
+    int quantidade = leitor.nextInt();
 
-    System.out.println("Qual o local do evento?\n");
-    String localEvento = leitor.next();
-} */
+    System.out.println("Qual o tipo de ingresso deseja comprar?\n Digite INTEIRA ou MEIA\n");
+    TipoIngresso tipo;
+    String tipoString = leitor.next();
+
+    while (true) {
+    if (tipoString.equalsIgnoreCase("INTEIRA")) {
+        tipo = TipoIngresso.INTEIRA;
+        break;
+    } else if (tipoString.equalsIgnoreCase("MEIA")) {
+        tipo = TipoIngresso.MEIA;
+        break;
+    } else {
+        System.out.println("Tipo de ingresso inválido. Digite INTEIRA ou MEIA."); }
+    }
+
+
+}
 
 }
 
