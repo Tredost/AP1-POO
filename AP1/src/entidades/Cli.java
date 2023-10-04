@@ -53,14 +53,14 @@ public static void cadastrarEvento(Scanner leitor, Exposicao expo, Show show, Jo
             expo.setPrecoCheio(precoCheio);
             expo.setIdadeMinima(idadeMinima);
             expo.setDuracaoDias(duracaoDias);
-            System.out.println("Nome: " + expo.getNomeEvento());
+            /* System.out.println("Nome: " + expo.getNomeEvento());
             System.out.println("Data: " + expo.getDataEvento());
             System.out.println("Local: " + expo.getLocalEvento());
             System.out.println("Ings. Inteira: " + expo.getIngressosInteira());
             System.out.println("Ings. Meia: " + expo.getIngressosMeia());
             System.out.println("Valor: " + expo.getPrecoCheio());
             System.out.println("Idade mínima: " + expo.getIdadeMinima());
-            System.out.println("Duração: " + expo.getDuracaoDias());
+            System.out.println("Duração: " + expo.getDuracaoDias()); */
             break;
 
         case 2:
@@ -82,7 +82,7 @@ public static void cadastrarEvento(Scanner leitor, Exposicao expo, Show show, Jo
             jogo.setEsporte(esporte);
             jogo.setEquipe1(equipe1);
             jogo.setEquipe2(equipe2);
-            System.out.println("Nome: " + jogo.getNomeEvento());
+            /*System.out.println("Nome: " + jogo.getNomeEvento());
             System.out.println("Data: " + jogo.getDataEvento());
             System.out.println("Local: " + jogo.getLocalEvento());
             System.out.println("Ings. Inteira: " + jogo.getIngressosInteira());
@@ -90,7 +90,7 @@ public static void cadastrarEvento(Scanner leitor, Exposicao expo, Show show, Jo
             System.out.println("Valor: " + jogo.getPrecoCheio());
             System.out.println("Esporte: " + jogo.getEsporte());
             System.out.println("Equipe 1: " + jogo.getEquipe1());
-            System.out.println("Equipe 2: " + jogo.getEquipe2());
+            System.out.println("Equipe 2: " + jogo.getEquipe2()); */
             break;
 
         case 3:
@@ -108,14 +108,14 @@ public static void cadastrarEvento(Scanner leitor, Exposicao expo, Show show, Jo
             show.setPrecoCheio(precoCheio);
             show.setNomeArtista(nomeArtista);
             show.setGeneroMusical(generoMusical);
-            System.out.println("Nome: " + show.getNomeEvento());
+          /*   System.out.println("Nome: " + show.getNomeEvento());
             System.out.println("Data: " + show.getDataEvento());
             System.out.println("Local: " + show.getLocalEvento());
             System.out.println("Ings. Inteira: " + show.getIngressosInteira());
             System.out.println("Ings. Meia: " + show.getIngressosMeia());
             System.out.println("Valor: " + show.getPrecoCheio());
             System.out.println("Artista: " + show.getNomeArtista());
-            System.out.println("Gênero musical: " + show.getGeneroMusical());
+            System.out.println("Gênero musical: " + show.getGeneroMusical()); */
             break;
 
         default:
@@ -189,6 +189,7 @@ public static void comprarIngresso(Scanner leitor, Exposicao expo, Show show, Jo
         break;
     } else {
         System.out.println("Tipo de ingresso inválido. Digite INTEIRA ou MEIA.\n"); }
+        tipoString = leitor.next();
     }
 
     switch (tipoEvento) {
@@ -233,7 +234,8 @@ public static void comprarIngresso(Scanner leitor, Exposicao expo, Show show, Jo
                 espacoEnum = EspacoEnum.CAMAROTE;
                 break;
             } else {
-                System.out.println("Tipo de ingresso inválido. Digite INTEIRA ou MEIA.\n"); }
+                System.out.println("Espaço inválido! Digite PISTA ou CAMAROTE.\n"); }
+                espacoString = leitor.next();
             }
 
             if (jogo.isIngressoDisponivel(tipoIngresso, quantidade)) {
