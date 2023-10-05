@@ -7,5 +7,22 @@ public class Show extends Evento{
         this.nomeArtista = nomeArtista;
         this.generoMusica = generoMusica;
     }
-    // O ingresso precisa ter qual a localização do ingresso dentro do local do evento, podendo ser “pista” ou “camarote”
+    
+    //getters
+    public String getNomeArtista(){
+        return this.nomeArtista;
+    }
+
+    public String getGeneroMusica(){
+        return this.generoMusica;
+    }
+
+    //setters
+    public void setNomeArtista(String nomeArtistaAtualizado){
+        this.nomeArtista = nomeArtistaAtualizado;
+    }
+
+    public void setGeneroMusica(String generoMusicaAtualizado){
+        this.generoMusica = generoMusicaAtualizado;
+    }
 }

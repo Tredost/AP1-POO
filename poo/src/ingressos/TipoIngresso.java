@@ -1,4 +1,4 @@
 package ingressos;
-public class TipoIngresso {
-    enum Valores{inteira,meia}
-}
+
+public enum TipoIngresso{inteira,meia}
+

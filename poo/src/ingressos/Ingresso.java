@@ -4,14 +4,38 @@ public abstract class Ingresso {
     Evento evento;
     TipoIngresso tipo;
 
+    Ingresso(){}
     Ingresso(Evento evento, TipoIngresso tipo){
         this.evento = evento;
         this.tipo = tipo;
     }
 
-    public double getPreco(){
-        double preco = 12.3;
-        // retorna o preço a depender do tipo de ingresso.
+    // verificar getPreco
+    public double getPreco(TipoIngresso tipo, Evento evento){
+        double preco;
+        if(tipo.equals(TipoIngresso.inteira)){
+            preco = this.evento.getPrecoCheio();
+        } else{
+            preco = this.evento.getPrecoCheio() / 2;
+        }
         return preco;
+    }
+
+    //getters
+    public Evento getEvento(){
+        return this.evento;
+    }
+
+    public TipoIngresso getTipoIngresso(){
+        return this.tipo;
+    }
+
+    //setters
+    public void setEvento(Evento eventoAtualizado){
+        this.evento = eventoAtualizado;
+    }
+
+    public void setTipoIngresso(TipoIngresso tipoAtualizado){
+        this.tipo = tipoAtualizado;
     }
 }

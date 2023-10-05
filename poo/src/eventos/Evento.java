@@ -1,4 +1,7 @@
 package eventos;
+
+// VERIFICAR INTEGRIDADE DOS ATRIBUTOS E CLASSES
+
 import ingressos.TipoIngresso;
 public abstract class Evento {
     String nome, data, local;
@@ -17,17 +20,75 @@ public abstract class Evento {
     }
 
     public boolean isIngressoDisponivel(TipoIngresso tipo, int quantidade){
-        boolean disponivel = true;
-        //  verifica se há ingressos disponíveis para o tipo e quantidade especificados
-        return disponivel;
+        if (tipo.equals(TipoIngresso.inteira) && quantidade <= ingressosInteira){
+            return true;
+        } else if (tipo.equals(TipoIngresso.meia) && quantidade <= ingressosInteira){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    public double venderIngresso(TipoIngresso tipo, int quantidade){
+        double valorTotal;
+        // testar se da pra verificar o isIngressoDisponivel aqui dentro
+        if (tipo.equals(TipoIngresso.inteira)){
+            this.ingressosInteira -= quantidade;
+            valorTotal = this.precoCheio*quantidade;
+        } else {
+            this.ingressosMeia -= quantidade;
+            valorTotal = (this.precoCheio/2)*quantidade;}   
+        return valorTotal;
     }
 
-    public double venderIngresso(TipoIngresso tipo){
-        double valorTotal = 12.3;
-        //  realiza a venda de ingressos do tipo e quantidade especificados e retorna o valor total da venda
-        return valorTotal;
+    // getters
+    public String getNome(){
+        return this.nome;
+    }
+
+    public String getData(){
+        return this.data;
+    }
+
+    public String getLocal(){
+        return this.local;
+    }
+
+    public int getIngressosMeia(){
+        return this.ingressosMeia;
+    }
+    
+    public int getIngressosInteira(){
+        return this.ingressosInteira;
+    }
+
+    public double getPrecoCheio(){
+        return this.precoCheio;
+    }
+
+    //setters
+    public void setNome(String nomeAtualizado){
+        this.nome = nomeAtualizado;
+    }
+
+    public void setData(String dataAtualizado){
+        this.data = dataAtualizado;
+    }
+
+    public void setLocal(String localAtualizado){
+        this.local = localAtualizado;
+    }
+
+    public void setIngressosInteira(int ingressosInteiraAtualizado){
+        this.ingressosInteira = ingressosInteiraAtualizado;
+    }
+
+    public void setIngressosMeia(int ingressosMeiaAtualizado){
+        this.ingressosMeia = ingressosMeiaAtualizado;
+    }
+
+    public void setPrecoCheio(double precoCheioAtualizado){
+        this.precoCheio = precoCheioAtualizado;
     }
 }
 
-// IMPLMENTAR GETTERS E SETTERS
-// VERIFICAR INTEGRIDADE DOS ATRIBUTOS E CLASSES

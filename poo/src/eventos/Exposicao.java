@@ -1,13 +1,28 @@
 package eventos;
 public class Exposicao extends Evento{
-    int faixaEtaria, duracaoDias;
-    boolean descontoSocial;
+    int idadeMinima, duracaoDias;
     
-    Exposicao(int faixaEtaria, int duracaoDias,boolean descontoSocial, String nome, String data, String local, int ingressosInteira, int ingressosMeia, double precoCheio){
+    Exposicao(int idadeMinima, int duracaoDias, String nome, String data, String local, int ingressosInteira, int ingressosMeia, double precoCheio){
         super(nome, data, local, ingressosInteira, ingressosMeia, precoCheio);
-        this.faixaEtaria = faixaEtaria;
+        this.idadeMinima = idadeMinima;
         this.duracaoDias = duracaoDias;
-        this.descontoSocial = descontoSocial;
     }
-    // O ingresso deve possuir um novo atributo booleano, chamado descontoSocial. Caso esse valor seja true, o preço de venda do ingresso é zerado;
+
+    //getters
+    public int getIdadeMinima(){
+        return this.idadeMinima;
+    }
+
+    public int getDuracaoDias(){
+        return this.duracaoDias;
+    }
+
+    //setters
+    public void setIdadeMinima(int idadeMinimaAtualizado){
+        this.idadeMinima = idadeMinimaAtualizado;
+    }
+
+    public void setDuracaoDias(int duracaoDiasAtualizado){
+        this.duracaoDias = duracaoDiasAtualizado;
+    }
 }
