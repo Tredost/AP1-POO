@@ -17,7 +17,11 @@ public class App {
                     evento = entidades.Cli.cadastrarEvento(leitor);
                     break;
                 case 2:
-                    entidades.Cli.comprarIngresso(leitor, evento);
+                    if (evento != null) {
+                    entidades.Cli.comprarIngresso(leitor, evento); }
+                    else {
+                        System.out.println("CADASTRE UM EVENTO!");
+                    }
                     break;
                 default:
                     System.out.println("OPÇÃO NÃO EXISTE!");

@@ -151,13 +151,12 @@ public static void comprarIngresso(Scanner leitor, Evento evento) {
             else { descontoSocial = false; }
 
             ingresso = new IngExpo(evento, tipoIngresso, descontoSocial);
-
             
             break;
 
         case "Jogo":
             System.out.println("Se possui desconto torcedor digite aqui!\n");
-            int descontoTorcedor = leitor.nextInt();
+            double descontoTorcedor = leitor.nextDouble();
 
             ingresso = new IngJogo(evento, tipoIngresso, descontoTorcedor);
            
@@ -187,22 +186,20 @@ public static void comprarIngresso(Scanner leitor, Evento evento) {
         default:
             System.out.println("OPÇÃO NÃO EXISTE!\n");
 
-    }
-
-    if (ingresso != null) {
-        if (evento.isIngressoDisponivel(tipoIngresso, quantidade)) {
+        }
+        
+        if (ingresso != null) {
+            if (evento.isIngressoDisponivel(tipoIngresso, quantidade)) {
                 double precoExpo = ingresso.getPreco() * quantidade;
                 evento.venderIngresso(tipoIngresso, quantidade);
                 System.out.println("Compra realizada! Valor: R$ " + precoExpo + "\n");
-
             }
-            else { System.out.println("Não existem ingressos disponíveis para sua compra :( "); }
+            else { 
+                System.out.println("Não existem ingressos disponíveis para sua compra :( "); 
+                
+        }
     }
-
-    
-
 }
-
 }
 
 
