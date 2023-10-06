@@ -17,7 +17,6 @@ public class App {
      * teste venderIngresso em Evento
      * verficar getPreco em Ingresso
      * corrigir integridade de atributos e métodos
-     * verificar vendas em cada instancia de ingresso
      */
     }
 }

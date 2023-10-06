@@ -1,4 +1,5 @@
 package eventos;
+
 public class Exposicao extends Evento{
     int idadeMinima, duracaoDias;
     
@@ -16,7 +17,7 @@ public class Exposicao extends Evento{
     public int getDuracaoDias(){
         return this.duracaoDias;
     }
-
+    
     //setters
     public void setIdadeMinima(int idadeMinimaAtualizado){
         this.idadeMinima = idadeMinimaAtualizado;
@@ -25,4 +26,12 @@ public class Exposicao extends Evento{
     public void setDuracaoDias(int duracaoDiasAtualizado){
         this.duracaoDias = duracaoDiasAtualizado;
     }
+
+    @Override
+    public String toString() {
+        return "Evento " + super.toString() + "\n" +
+            "Faixa etária mínima para participação: " + this.getIdadeMinima() + "\n" +
+            "Duração do evento em dias : " + this.getDuracaoDias();
+    }
 }
+

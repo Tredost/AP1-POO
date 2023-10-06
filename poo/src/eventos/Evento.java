@@ -29,16 +29,13 @@ public abstract class Evento {
         }
     }
     
-    public double venderIngresso(TipoIngresso tipo, int quantidade){
-        double valorTotal;
+
+    public void venderIngresso(TipoIngresso tipo, int quantidade){
         // testar se da pra verificar o isIngressoDisponivel aqui dentro
         if (tipo.equals(TipoIngresso.inteira)){
             this.ingressosInteira -= quantidade;
-            valorTotal = this.precoCheio*quantidade;
         } else {
-            this.ingressosMeia -= quantidade;
-            valorTotal = (this.precoCheio/2)*quantidade;}   
-        return valorTotal;
+            this.ingressosMeia -= quantidade;}   
     }
 
     // getters
@@ -89,6 +86,16 @@ public abstract class Evento {
 
     public void setPrecoCheio(double precoCheioAtualizado){
         this.precoCheio = precoCheioAtualizado;
+    }
+
+    @Override
+    public String toString() {
+        return this.getNome() + "\n" +
+            "Data: " + this.getData() + "\n" +
+            "Local: " + this.getLocal() + "\n" +
+            "Quantidade de ingressos inteira: " + this.getIngressosInteira() + "\n" +
+            "Quantidade de ingressos meia: " + this.getIngressosMeia() + "\n" +
+            "Preço cheio do ingresso: " + this.getPrecoCheio();
     }
 }
 

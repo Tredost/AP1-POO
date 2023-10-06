@@ -10,6 +10,16 @@ public class IngressoExposicao extends Ingresso{
         this.descontoSocial = descontoSocial;
     }
 
+    public double getPreco(){
+        if(descontoSocial){
+            return 0.0;
+        }else if (this.tipo.equals(TipoIngresso.inteira)){
+            return this.evento.getPrecoCheio();
+        }else{
+            return this.evento.getPrecoCheio()/2;
+        }
+    }
+
     //getter
     public boolean getDescontoSocial(){
         return this.descontoSocial;
@@ -20,6 +30,9 @@ public class IngressoExposicao extends Ingresso{
         this.descontoSocial = descontoSocialAtualizado;
     }
 
-    // VENDA OU GETPRECO?
-    // if descontoSocial: venda return 0
+    @Override
+    public String toString() {
+        return "Ingresso " + super.toString() + "\n" +
+            "Desconto Social: " + this.getDescontoSocial();
+}
 }

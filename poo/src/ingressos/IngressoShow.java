@@ -11,6 +11,14 @@ public class IngressoShow extends Ingresso{
         this.setor = setor;
     }
 
+    public double getPreco(){
+        if(tipo.equals(TipoIngresso.inteira)){
+            return this.getEvento().getPrecoCheio();
+        }else{
+            return this.getEvento().getPrecoCheio()/2;
+        }
+    }
+
     // getter
     public Setor getSetor(){
         return this.setor;
@@ -19,5 +27,11 @@ public class IngressoShow extends Ingresso{
     //setter
     public void setSetor(Setor setorAtualizado){
         this.setor = setorAtualizado;
+    }
+
+    @Override
+    public String toString() {
+        return "Ingresso " + super.toString() + "\n" +
+            "Setor: " + this.getSetor();
     }
 }

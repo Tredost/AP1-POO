@@ -11,15 +11,7 @@ public abstract class Ingresso {
     }
 
     // verificar getPreco
-    public double getPreco(TipoIngresso tipo, Evento evento){
-        double preco;
-        if(tipo.equals(TipoIngresso.inteira)){
-            preco = this.evento.getPrecoCheio();
-        } else{
-            preco = this.evento.getPrecoCheio() / 2;
-        }
-        return preco;
-    }
+    public abstract double getPreco();
 
     //getters
     public Evento getEvento(){
@@ -37,5 +29,11 @@ public abstract class Ingresso {
 
     public void setTipoIngresso(TipoIngresso tipoAtualizado){
         this.tipo = tipoAtualizado;
+    }
+
+    @Override
+    public String toString() {
+        return this.getEvento() + "\n" +
+            "Tipo do ingresso: " + this.getTipoIngresso();
     }
 }

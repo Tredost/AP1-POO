@@ -25,4 +25,11 @@ public class Jogo extends Evento{
     public void setEquipes(String equipesAtualizado){
         this.equipes = equipesAtualizado;
     }
+
+    @Override
+    public String toString() {
+        return "Evento: " + super.toString() + "\n" +
+            "Esporte: " + this.getEsporte() + "\n" +
+            "Equipes" + this.getEquipes();
+    }
 }

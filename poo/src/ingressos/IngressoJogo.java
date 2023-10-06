@@ -10,6 +10,17 @@ public class IngressoJogo extends Ingresso{
         this.percentualDescontoTorcedor = percentualDescontoTorcedor;
     }
 
+    public double getPreco(){
+        double desconto = 1 - (this.percentualDescontoTorcedor/100);
+        if(tipo.equals(TipoIngresso.inteira)){
+            double valorFinal = desconto*this.getEvento().getPrecoCheio();
+            return valorFinal; 
+        }else{
+            double valorFinal = desconto*this.getEvento().getPrecoCheio(); 
+            return valorFinal; 
+        }
+    }
+
     //getter
     public double getPercentualDescontoTorcedor(){
         return this.percentualDescontoTorcedor;
@@ -20,11 +31,9 @@ public class IngressoJogo extends Ingresso{
         this.percentualDescontoTorcedor = percentualAtualizado;
     }
 
-    /*  MEIA 
-    desconto = 1 - (percentualDescontoTorcedor/100)
-    valorFinal = desconto*0.5*precoCheio 
-        INTEIRA
-    desconto = 1 - (percentualDescontoTorcedor/100)
-    valorFinal = desconto*precoCheio 
-    */
+    @Override
+    public String toString() {
+        return "Ingresso " + super.toString() + "\n" +
+            "Deconto de torcedor: " + this.getPercentualDescontoTorcedor();
+    }
 }

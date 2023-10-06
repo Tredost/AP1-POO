@@ -25,4 +25,11 @@ public class Show extends Evento{
     public void setGeneroMusica(String generoMusicaAtualizado){
         this.generoMusica = generoMusicaAtualizado;
     }
+
+    @Override
+    public String toString() {
+        return "Evento " + super.toString() + "\n" +
+            "Artista: " + this.getNomeArtista() + "\n" +
+            "Gênero musical : " + this.getGeneroMusica();
+    }
 }
