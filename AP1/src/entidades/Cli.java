@@ -14,8 +14,10 @@ import entidades.ingressos.IngShow.EspacoEnum;
 public class Cli {
 Scanner leitor = new Scanner(System.in);
 
+
 public static Evento cadastrarEvento(Scanner leitor) {
     Evento evento = null;
+    leitor.useDelimiter(";");
 
     System.out.println("Qual tipo de evento deseja cadastar?\n  1 - Exposição\n  2 - Jogo\n  3 - Show\n");
     int tipoEvento = leitor.nextInt();
@@ -199,7 +201,10 @@ public static void comprarIngresso(Scanner leitor, Evento evento) {
                 
         }
     }
+
+    
 }
+
 }
 
 
