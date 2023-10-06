@@ -11,75 +11,8 @@ public class Show extends Evento {
         super(nomeEvento, dataEvento, localEvento, ingressosInteira, ingressosMeia, precoCheio);
         this.nomeArtista = nomeArtista;
         this.generoMusical = generoMusical;
+        this.tipo = "Show";
     }
-
-
-
-
-
-
-
-
-
-
-
-
-    /*public boolean isIngressoDisponivel(TipoIngresso tipoIngresso, int quantidade) {
-        if (tipoIngresso.equals(TipoIngresso.INTEIRA) && quantidade <= this.getIngressosInteira()){
-            return true;
-        }
-        else if (tipoIngresso.equals(TipoIngresso.MEIA) && quantidade <= this.getIngressosMeia()) {
-            return true;
-        }
-            return false;
-    } */
-
-
-    public double venderIngresso(TipoIngresso tipoIngresso, int quantidade, EspacoEnum espacoEnum) {
-
-        IngShow ingresso = new IngShow(this, tipoIngresso, espacoEnum);
-        double valor = ingresso.getPreco();
-
-        if (tipoIngresso.equals(TipoIngresso.INTEIRA)){
-            int ingressosInteira = this.getIngressosInteira();
-            ingressosInteira -= quantidade;
-            this.setIngressosInteira(ingressosInteira);
-        }
-        else {
-            int ingressosMeia = this.getIngressosMeia();
-            ingressosMeia -= quantidade;
-            this.setIngressosMeia(ingressosMeia);
-        }
-
-        return valor * quantidade;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     // GETTERS

@@ -11,40 +11,8 @@ public class Jogo extends Evento {
         this.esporte = esporte;
         this.equipe1 = equipe1;
         this.equipe2 = equipe2;
+        this.tipo = "Jogo";
     }
-
-    /* public boolean isIngressoDisponivel(TipoIngresso tipoIngresso, int quantidade) {
-        if (tipoIngresso.equals(TipoIngresso.INTEIRA) && quantidade <= this.getIngressosInteira()){
-            return true;
-        }
-        else if (tipoIngresso.equals(TipoIngresso.MEIA) && quantidade <= this.getIngressosMeia()) {
-            return true;
-        }
-            return false;
-    } */
-
-    public double venderIngresso(TipoIngresso tipoIngresso, int quantidade, int descontoTorcedor) {
-
-        IngJogo ingresso = new IngJogo(this, tipoIngresso, descontoTorcedor);
-        double valor = ingresso.getPreco();
-
-        if (tipoIngresso.equals(TipoIngresso.INTEIRA)){
-            int ingressosInteira = this.getIngressosInteira();
-            ingressosInteira -= quantidade;
-            this.setIngressosInteira(ingressosInteira);
-        }
-        else {
-            int ingressosMeia = this.getIngressosMeia();
-            ingressosMeia -= quantidade;
-            this.setIngressosMeia(ingressosMeia);
-        }
-        return valor * quantidade;
-    }
-
-
-
-
-
 
 
     // GETTERS

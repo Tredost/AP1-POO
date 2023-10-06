@@ -3,11 +3,10 @@ import entidades.Cli;
 import entidades.eventos.Exposicao;
 import entidades.eventos.Jogo;
 import entidades.eventos.Show;
+import entidades.eventos.Evento;
 public class App {
     public static void main(String[] args) throws Exception {
-        Exposicao expo = new Exposicao(null, null, null, 0, 0, 0, 0, 0);
-        Show show = new Show(null, null, null, 0, 0, 0, null, null);
-        Jogo jogo = new Jogo(null, null, null, 0, 0, 0, null, null, null);
+        Evento evento = null; 
 
         Scanner leitor = new Scanner(System.in);
         while (true) {
@@ -15,10 +14,10 @@ public class App {
             int opcao = leitor.nextInt();
             switch (opcao) {
                 case 1:
-                    entidades.Cli.cadastrarEvento(leitor, expo, show, jogo);
+                    evento = entidades.Cli.cadastrarEvento(leitor);
                     break;
                 case 2:
-                    entidades.Cli.comprarIngresso(leitor, expo, show, jogo);
+                    entidades.Cli.comprarIngresso(leitor, evento);
                     break;
                 default:
                     System.out.println("OPÇÃO NÃO EXISTE!");

@@ -10,35 +10,9 @@ public class Exposicao extends Evento {
         super(nomeEvento, dataEvento, localEvento, ingressosInteira, ingressosMeia, precoCheio);
         this.idadeMinima = idadeMinima;
         this.duracaoDias = duracaoDias;
+        this.tipo = "Exposição";
     }
-
-    /* public boolean isIngressoDisponivel(TipoIngresso tipoIngresso, int quantidade) {
-        if (tipoIngresso.equals(TipoIngresso.INTEIRA) && quantidade <= this.getIngressosInteira()){
-            return true;
-        }
-        else if (tipoIngresso.equals(TipoIngresso.MEIA) && quantidade <= this.getIngressosMeia()) {
-            return true;
-        }
-            return false;
-    } */
-
-    public double venderIngresso(TipoIngresso tipoIngresso, int quantidade, boolean descontoSocial) {
-
-        IngExpo ingresso = new IngExpo(this, tipoIngresso, descontoSocial);
-        double valor = ingresso.getPreco();
-
-        if (tipoIngresso.equals(TipoIngresso.INTEIRA)){
-            int ingressosInteira = this.getIngressosInteira();
-            ingressosInteira -= quantidade;
-            this.setIngressosInteira(ingressosInteira);
-        }
-        else {
-            int ingressosMeia = this.getIngressosMeia();
-            ingressosMeia -= quantidade;
-            this.setIngressosMeia(ingressosMeia);
-        }
-        return valor * quantidade;
-    }
+   
 
     // GETTERS
 

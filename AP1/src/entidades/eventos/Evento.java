@@ -5,6 +5,7 @@ public abstract class Evento {
     private String nomeEvento, dataEvento, localEvento;
     private int ingressosInteira, ingressosMeia;
     private double precoCheio;
+    protected String tipo;
 
     public Evento(String nomeEvento, String dataEvento, String localEvento, int ingressosInteira, int ingressosMeia, double precoCheio) {
         this.nomeEvento = nomeEvento;
@@ -25,17 +26,14 @@ public abstract class Evento {
             return false;
     }
 
-    public double venderIngresso(TipoIngresso tipoIngresso, int quantidade) {
-        double valor;
+    public void venderIngresso(TipoIngresso tipoIngresso, int quantidade) {
         if (tipoIngresso.equals(TipoIngresso.INTEIRA)){
             this.ingressosInteira -= quantidade;
-            valor = this.precoCheio;
         }
         else {
             this.ingressosMeia -= quantidade;
-            valor = this.precoCheio / 2;
         }
-        return valor * quantidade;
+        
     }
 
     // GETTERS
@@ -62,6 +60,10 @@ public abstract class Evento {
 
     public double getPrecoCheio() {
         return this.precoCheio;
+    }
+
+    public String getTipo() {
+        return this.tipo;
     }
 
     // SETTERS

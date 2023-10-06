@@ -15,7 +15,7 @@ public class IngJogo extends Ingresso {
         if (this.getTipoIngresso().equals(TipoIngresso.INTEIRA)) {
             return this.getEvento().getPrecoCheio() * this.percentualDescontoTorcedor;
         }
-        return this.getEvento().getPrecoCheio() * this.percentualDescontoTorcedor * 0.5;
+        return (this.getEvento().getPrecoCheio() * this.percentualDescontoTorcedor) / 2;
     }
 
     // GETTERS
