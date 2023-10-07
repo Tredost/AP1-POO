@@ -18,7 +18,7 @@ public class Jogo extends Evento {
 
     @Override
     public String toString() {
-        return "Evento: " + super.toString() + "\n" +
+        return "Jogo: " + super.toString() + "\n" +
             "Esporte: " + this.esporte + "\n" +
             "Equipe 1: " + this.equipe1 + "\n" +
             "Equipe 2: " + this.equipe2;
