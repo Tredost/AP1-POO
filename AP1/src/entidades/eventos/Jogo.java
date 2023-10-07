@@ -14,6 +14,15 @@ public class Jogo extends Evento {
         this.tipo = "Jogo";
     }
 
+    // toString
+
+    @Override
+    public String toString() {
+        return "Evento: " + super.toString() + "\n" +
+            "Esporte: " + this.esporte + "\n" +
+            "Equipe 1: " + this.equipe1 + "\n" +
+            "Equipe 2: " + this.equipe2;
+    }
 
     // GETTERS
 

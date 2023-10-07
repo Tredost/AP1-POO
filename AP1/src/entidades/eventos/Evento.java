@@ -33,7 +33,18 @@ public abstract class Evento {
         else {
             this.ingressosMeia -= quantidade;
         }
-        
+
+    }
+
+    // toString
+
+    public String toString() {
+        return this.nomeEvento + "\n" +
+            "Data: " + this.dataEvento + "\n" +
+            "Local: " + this.localEvento + "\n" +
+            "Quantidade de ingressos inteira: " + this.ingressosInteira + "\n" +
+            "Quantidade de ingressos meia: " + this.ingressosMeia + "\n" +
+            "Preço cheio do ingresso: " + this.precoCheio;
     }
 
     // GETTERS

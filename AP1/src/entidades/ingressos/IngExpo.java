@@ -18,6 +18,14 @@ public class IngExpo extends Ingresso{
             return this.getEvento().getPrecoCheio() / 2; }
     }
 
+    // toString
+
+    @Override
+    public String toString() {
+        return "Ingresso: " + super.toString() + "\n" +
+            "Desconto Social: " + this.descontoSocial;
+    }
+
     // GETTERS
 
     public boolean getDescontoSocial() {

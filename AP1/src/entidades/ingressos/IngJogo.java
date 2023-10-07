@@ -18,6 +18,14 @@ public class IngJogo extends Ingresso {
         return (this.getEvento().getPrecoCheio() * this.percentualDescontoTorcedor) / 2;
     }
 
+    // toString
+
+    @Override
+    public String toString() {
+        return "Ingresso: " + super.toString() + "\n" +
+            "Deconto de torcedor: " + this.percentualDescontoTorcedor;
+    }
+
     // GETTERS
 
     public double getPercentualDescontoTorcedor() {

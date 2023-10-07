@@ -14,6 +14,14 @@ public class Show extends Evento {
         this.tipo = "Show";
     }
 
+    // toString
+
+    @Override
+    public String toString() {
+        return "Evento " + super.toString() + "\n" +
+            "Artista: " + this.nomeArtista + "\n" +
+            "Gênero musical : " + this.generoMusical;
+    }
 
     // GETTERS
 

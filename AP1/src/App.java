@@ -6,7 +6,7 @@ import entidades.eventos.Show;
 import entidades.eventos.Evento;
 public class App {
     public static void main(String[] args) throws Exception {
-        Evento evento = null; 
+        Evento evento = null;
 
         Scanner leitor = new Scanner(System.in);
         while (true) {
@@ -20,7 +20,7 @@ public class App {
                     if (evento != null) {
                     entidades.Cli.comprarIngresso(leitor, evento); }
                     else {
-                        System.out.println("CADASTRE UM EVENTO!");
+                        System.out.println("CADASTRE UM EVENTO PRIMEIRO!");
                     }
                     break;
                 default:

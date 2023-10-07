@@ -17,6 +17,14 @@ public class IngShow extends Ingresso {
         return this.getEvento().getPrecoCheio() / 2;
     }
 
+    // toString
+
+    @Override
+    public String toString() {
+        return "Ingresso: " + super.toString() + "\n" +
+            "Local: " + this.espacoEnum;
+    }
+
     // GETTERS
 
     public EspacoEnum getEspacoEnum() {

@@ -10,10 +10,14 @@ public abstract class Ingresso {
         this.tipoIngresso = tipoIngresso;
     }
 
-    public abstract double getPreco(); /* { if (this.tipoIngresso.equals(TipoIngresso.INTEIRA)){
-                                            return this.evento.getPrecoCheio(); }
-                                            return this.evento.getPrecoCheio() / 2; } */
+    public abstract double getPreco();
 
+    // toString
+
+    public String toString() {
+        return this.evento + "\n" +
+            "Tipo do ingresso: " + this.tipoIngresso;
+    }
 
     // GETTERS
 
