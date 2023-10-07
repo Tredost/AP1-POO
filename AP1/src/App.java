@@ -10,7 +10,7 @@ public class App {
 
         Scanner leitor = new Scanner(System.in);
         while (true) {
-            System.out.println("O que deseja fazer?\n  1 - Cadastrar novo evento\n  2 - Comprar ingresso");
+            System.out.println("O que deseja fazer?\n  1 - Cadastrar novo evento\n  2 - Comprar ingresso 3testedados");
             int opcao = leitor.nextInt();
             switch (opcao) {
                 case 1:
@@ -19,6 +19,13 @@ public class App {
                 case 2:
                     if (evento != null) {
                     entidades.Cli.comprarIngresso(leitor, evento); }
+                    else {
+                        System.out.println("CADASTRE UM EVENTO PRIMEIRO!");
+                    }
+                    break;
+                case 3:
+                    if (evento != null) {
+                    System.out.println(evento);; }
                     else {
                         System.out.println("CADASTRE UM EVENTO PRIMEIRO!");
                     }
