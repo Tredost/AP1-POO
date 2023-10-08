@@ -125,32 +125,42 @@ public static void comprarIngresso(Scanner leitor, Evento evento) {
     System.out.println("Quantos ingressos deseja?\n");
     int quantidade = leitor.nextInt();
 
-    System.out.println("Qual o tipo de ingresso deseja comprar?\n Digite INTEIRA ou MEIA\n");
+    System.out.println("Qual o tipo de ingresso deseja comprar?\n  1 - INTEIRA\n  2 - MEIA\n");
     TipoIngresso tipoIngresso;
-    String tipoString = leitor.next();
+    int tipoInt = leitor.nextInt();
 
     while (true) {
-    if (tipoString.equalsIgnoreCase("INTEIRA")) {
+    if (tipoInt == 1) {
         tipoIngresso = TipoIngresso.INTEIRA;
         break;
-    } else if (tipoString.equalsIgnoreCase("MEIA")) {
+    } else if (tipoInt == 2) {
         tipoIngresso = TipoIngresso.MEIA;
         break;
     } else {
-        System.out.println("Tipo de ingresso inválido. Digite INTEIRA ou MEIA.\n"); }
-        tipoString = leitor.next();
+        System.out.println("Tipo de ingresso inválido. Tente denovo!\n");
+        tipoInt = leitor.nextInt();
+    }
     }
 
     switch (evento.getTipo()) {
 
         case "Exposição":
-            System.out.println("Se possui desconto social digite '1'!\n");
+            System.out.println("Possui desconto social?\n  1 - SIM\n  2 - NÃO\n");
             int descontoInt = leitor.nextInt();
             boolean descontoSocial;
 
-            if (descontoInt == 1) { descontoSocial = true; }
-            else { descontoSocial = false; }
-
+            while (true) {
+            if (descontoInt == 1) {
+                descontoSocial = true;
+                break;
+            } else if (descontoInt == 2) {
+                descontoSocial = false;
+                break;
+            } else {
+                System.out.println("Resposta inválida. Tente denovo!\n");
+                descontoInt = leitor.nextInt();
+            }
+            }
             ingresso = new IngExpo(evento, tipoIngresso, descontoSocial);
 
             break;
@@ -186,7 +196,6 @@ public static void comprarIngresso(Scanner leitor, Evento evento) {
 
         default:
             System.out.println("OPÇÃO NÃO EXISTE!\n");
-
         }
 
         if (ingresso != null) {
@@ -197,13 +206,9 @@ public static void comprarIngresso(Scanner leitor, Evento evento) {
             }
             else {
                 System.out.println("Não existem ingressos disponíveis para sua compra :( ");
-
         }
     }
-
-
 }
-
 }
 
 
