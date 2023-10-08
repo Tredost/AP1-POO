@@ -42,8 +42,8 @@ public abstract class Evento {
         return this.nomeEvento + "\n" +
             "Data: " + this.dataEvento + "\n" +
             "Local: " + this.localEvento + "\n" +
-            "Quantidade de ingressos inteira: " + this.ingressosInteira + "\n" +
-            "Quantidade de ingressos meia: " + this.ingressosMeia + "\n" +
+            "Quantidade de ingressos inteira restantes: " + this.ingressosInteira + "\n" +
+            "Quantidade de ingressos meia restantes: " + this.ingressosMeia + "\n" +
             "Preço cheio do ingresso: " + this.precoCheio;
     }
 

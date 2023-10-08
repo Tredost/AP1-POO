@@ -191,9 +191,9 @@ public static void comprarIngresso(Scanner leitor, Evento evento) {
 
         if (ingresso != null) {
             if (evento.isIngressoDisponivel(tipoIngresso, quantidade)) {
-                double precoExpo = ingresso.getPreco() * quantidade;
+                double valor = ingresso.getPreco() * quantidade;
                 evento.venderIngresso(tipoIngresso, quantidade);
-                System.out.println("Compra realizada! Valor: R$ " + precoExpo + "\n");
+                System.out.println("Compra realizada!\n  " + quantidade + "x " + tipoIngresso + "\n  TOTAL: R$ " + valor + "\n");
             }
             else {
                 System.out.println("Não existem ingressos disponíveis para sua compra :( ");
