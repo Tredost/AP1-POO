@@ -19,7 +19,7 @@ public class Exposicao extends Evento {
     public String toString() {
         return "Exposição: " + super.toString() + "\n" +
             "Idade mínima recomendada: " + this.idadeMinima + "\n" +
-            "Duração: " + this.duracaoDias + "dias";
+            "Duração: " + this.duracaoDias + " dias";
     }
 
     // GETTERS
