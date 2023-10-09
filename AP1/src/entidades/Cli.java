@@ -193,6 +193,16 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             System.out.println("Se possui desconto torcedor digite aqui!\n");
             double descontoTorcedor = leitor.nextDouble();
 
+            while (true) {
+            if (descontoTorcedor < 0) {
+                System.out.println("Valor inválido! Tente denovo.\n");
+                descontoTorcedor = leitor.nextInt(); }
+            else {
+                break;
+            }
+
+            }
+
             ingresso = new IngJogo(evento, tipoIngresso, descontoTorcedor);
             emitirRecibo(evento, ingresso, tipoIngresso, quantidade);
             return ingresso;
@@ -231,12 +241,12 @@ public static void emitirRecibo(Evento evento, Ingresso ingresso, TipoIngresso t
 }
 
 public static void consultarIngressosRestantes(Evento evento) {
-    System.out.println("Quantidade de ingressos inteiras restante: "+ evento.getIngressosInteira() + "\nQuantidade de ingressos meia restante:" + evento.getIngressosMeia() + "\n");
-    
+    System.out.println("Quantidade de ingressos inteiras restante: "+ evento.getIngressosInteira() +
+    "\nQuantidade de ingressos meia restante: " + evento.getIngressosMeia() + "\n");
 }
 
 public static void informaçaoUltimaVenda (Ingresso ingresso) {
-    System.out.println("");
+    System.out.println(ingresso);
 }
 
 }

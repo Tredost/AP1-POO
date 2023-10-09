@@ -35,7 +35,6 @@ public abstract class Evento {
         else {
             this.ingressosMeia -= quantidade;
         }
-
     }
 
     // toString

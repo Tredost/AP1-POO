@@ -20,8 +20,7 @@ public class Jogo extends Evento {
     public String toString() {
         return "\nJogo: " + super.toString() + "\n" +
             "Esporte: " + this.esporte + "\n" +
-            "Equipe 1: " + this.equipe1 + "\n" +
-            "Equipe 2: " + this.equipe2 + "\n";
+            "Equipes: " + this.equipe1 + " x " + this.equipe2 + "\n";
     }
 
     // GETTERS
