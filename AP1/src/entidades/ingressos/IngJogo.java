@@ -23,7 +23,7 @@ public class IngJogo extends Ingresso {
     @Override
     public String toString() {
         return "Ingresso: " + super.toString() + "\n" +
-            "Deconto de torcedor: " + this.percentualDescontoTorcedor;
+            "Deconto de torcedor: " + this.percentualDescontoTorcedor + " %";
     }
 
     // GETTERS

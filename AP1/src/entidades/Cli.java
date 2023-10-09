@@ -79,7 +79,7 @@ public static Evento cadastrarEvento(Scanner leitor) {
 
 }
 
-public static void mostrarEvento(Evento evento) {
+/* public static void mostrarEvento(Evento evento) {
     if (evento instanceof Show) {
         Show show = (Show) evento;
         System.out.println("Nome: " + show.getNomeEvento());
@@ -116,7 +116,7 @@ public static void mostrarEvento(Evento evento) {
         System.out.println("Equipe 2: " + jogo.getEquipe2());
     }
     else { System.out.println("Tipo de evento desconhecido"); }
-}
+} */
 
 public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
     Ingresso ingresso = null;
@@ -147,7 +147,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
     }
     else {
         System.out.println("Não existem ingressos disponíveis para sua compra :( ");
-        comprarIngresso(leitor, evento);
+        return ingresso;
     }
 
     switch (evento.getTipo()) {
@@ -165,14 +165,12 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                 descontoSocial = false;
                 break;
             } else {
-                System.out.println("Opção inválida. Tente denovo!\n");
+                System.out.println("Opção inválida! Tente denovo.\n");
                 descontoInt = leitor.nextInt();
             }
             }
             ingresso = new IngExpo(evento, tipoIngresso, descontoSocial);
-            double valorExpo = ingresso.getPreco() * quantidade;
-            evento.venderIngresso(tipoIngresso, quantidade);
-            System.out.println("Compra realizada!\n  " + quantidade + "x " + tipoIngresso + "\n  TOTAL: R$ " + valorExpo + "\n");
+            emitirRecibo(evento, ingresso, tipoIngresso, quantidade);
             return ingresso;
 
 
@@ -181,38 +179,40 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             double descontoTorcedor = leitor.nextDouble();
 
             ingresso = new IngJogo(evento, tipoIngresso, descontoTorcedor);
-            double valorJogo = ingresso.getPreco() * quantidade;
-            evento.venderIngresso(tipoIngresso, quantidade);
-            System.out.println("Compra realizada!\n  " + quantidade + "x " + tipoIngresso + "\n  TOTAL: R$ " + valorJogo + "\n");
+            emitirRecibo(evento, ingresso, tipoIngresso, quantidade);
             return ingresso;
 
         case "Show":
-            System.out.println("Qual o espaço do show deseja ficar? Digite PISTA ou CAMAROTE\n");
+            System.out.println("Qual o espaço do show deseja ficar?\n  1 - PISTA\n  2 - CAMAROTE\n");
             EspacoEnum espacoEnum;
-            String espacoString = leitor.next();
+            int espacoInt = leitor.nextInt();
 
             while (true) {
-            if (espacoString.equalsIgnoreCase("PISTA")) {
+            if (espacoInt == 1) {
                 espacoEnum = EspacoEnum.PISTA;
                 break;
-            } else if (espacoString.equalsIgnoreCase("CAMAROTE")) {
+            } else if (espacoInt == 2) {
                 espacoEnum = EspacoEnum.CAMAROTE;
                 break;
             } else {
-                System.out.println("Espaço inválido! Digite PISTA ou CAMAROTE.\n"); }
-                espacoString = leitor.next();
+                System.out.println("Espaço inválido! Tente novamente.\n"); }
+                espacoInt = leitor.nextInt();
             }
 
             ingresso = new IngShow(evento, tipoIngresso, espacoEnum);
-            double valorShow = ingresso.getPreco() * quantidade;
-            evento.venderIngresso(tipoIngresso, quantidade);
-            System.out.println("Compra realizada!\n  " + quantidade + "x " + tipoIngresso + "\n  TOTAL: R$ " + valorShow + "\n");
+            emitirRecibo(evento, ingresso, tipoIngresso, quantidade);
             return ingresso;
 
         default:
             System.out.println("OPÇÃO NÃO EXISTE!\n");
             return ingresso;
         }
+}
+
+public static void emitirRecibo(Evento evento, Ingresso ingresso, TipoIngresso tipoIngresso, int quantidade) {
+    double valor = ingresso.getPreco() * quantidade;
+    evento.venderIngresso(tipoIngresso, quantidade);
+    System.out.println("Compra realizada!\n  " + quantidade + "x " + tipoIngresso + "\n  TOTAL: R$ " + valor + "\n");
 }
 }
 
