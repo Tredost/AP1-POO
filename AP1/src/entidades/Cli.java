@@ -237,7 +237,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
 public static void emitirRecibo(Evento evento, Ingresso ingresso, TipoIngresso tipoIngresso, int quantidade) {
     double valor = ingresso.getPreco() * quantidade;
     evento.venderIngresso(tipoIngresso, quantidade);
-    System.out.println("Compra realizada!\n  " + quantidade + "x " + tipoIngresso + "\n  TOTAL: R$" + String.format("%.2f", valor) + "\n");
+    System.out.println("Compra realizada!\n  " + quantidade + "x " + tipoIngresso + "\n  TOTAL: R$ " + String.format("%.2f", valor) + "\n");
 }
 
 public static void consultarIngressosRestantes(Evento evento) {
