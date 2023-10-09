@@ -22,14 +22,14 @@ public class App {
                     if (evento != null) {
                         ingresso = entidades.Cli.comprarIngresso(leitor, evento); }
                     else {
-                        System.out.println("CADASTRE UM EVENTO PRIMEIRO!");
+                        System.out.println("CADASTRE UM EVENTO PRIMEIRO!\n");
                     }
                     break;
                 case 3:
                     if (evento != null) {
                         System.out.println(evento); }
                     else {
-                        System.out.println("CADASTRE UM EVENTO PRIMEIRO!");
+                        System.out.println("CADASTRE UM EVENTO PRIMEIRO!\n");
                     }
                     break;
 
@@ -37,19 +37,19 @@ public class App {
                     if (evento != null) {
                         entidades.Cli.consultarIngressosRestantes(evento); }
                     else {
-                        System.out.println("CADASTRE UM EVENTO PRIMEIRO!");
+                        System.out.println("CADASTRE UM EVENTO PRIMEIRO!\n");
                     }
                     break;
-                
+
                 case 5:
                     if (ingresso != null) {
                         System.out.println(ingresso); }
                     else {
-                        System.out.println("COMPRE UM INGRESSO PRIMEIRO!");
+                        System.out.println("COMPRE UM INGRESSO PRIMEIRO!\n");
                     }
                     break;
                 default:
-                    System.out.println("OPÇÃO NÃO EXISTE!");
+                    System.out.println("OPÇÃO NÃO EXISTE!\n");
             }
         }
     }

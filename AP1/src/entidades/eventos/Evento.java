@@ -46,7 +46,7 @@ public abstract class Evento {
             "Local: " + this.localEvento + "\n" +
             "Quantidade de ingressos inteira: " + this.ingressosInteiraOriginal + "\n" +
             "Quantidade de ingressos meia: " + this.ingressosMeiaOriginal + "\n" +
-            "Preço cheio do ingresso: " + this.precoCheio;
+            "Preço cheio do ingresso: R$ " + String.format("%.2f", this.precoCheio);
     }
 
     // GETTERS
