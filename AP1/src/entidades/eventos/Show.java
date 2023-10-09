@@ -18,9 +18,9 @@ public class Show extends Evento {
 
     @Override
     public String toString() {
-        return "Show: " + super.toString() + "\n" +
+        return "\nShow: " + super.toString() + "\n" +
             "Artista: " + this.nomeArtista + "\n" +
-            "Gênero musical: " + this.generoMusical;
+            "Gênero musical: " + this.generoMusical + "\n";
     }
 
     // GETTERS
