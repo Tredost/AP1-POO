@@ -21,6 +21,15 @@ public static Evento cadastrarEvento(Scanner leitor) {
     System.out.println("Qual tipo de evento deseja cadastar?\n  1 - Exposição\n  2 - Jogo\n  3 - Show\n");
     int tipoEvento = leitor.nextInt();
 
+    while (true) {
+        if (tipoEvento <= 0 && tipoEvento > 3) {
+            System.out.println("Opção inválida! Tente denovo.\n");
+            tipoEvento = leitor.nextInt();
+        } else {
+            break;
+        }
+        }
+
     leitor.nextLine();
 
     System.out.println("Qual nome do evento?\n");
@@ -80,7 +89,7 @@ public static Evento cadastrarEvento(Scanner leitor) {
             return new Show(nomeEvento, dataEvento, localEvento, ingressosInteira, ingressosMeia, precoCheio, nomeArtista, generoMusical);
 
         default:
-            System.out.println("OPÇÃO NÃO EXISTE!");
+        
             return evento;
     }
 
@@ -135,7 +144,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
 
     while (true) {
     if (quantidade <= 0) {
-        System.out.println("Quantidade inválida. Tente denovo!\n");
+        System.out.println("Quantidade inválida! Tente denovo.\n");
         quantidade = leitor.nextInt();
     } else {
         break;
@@ -154,7 +163,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
         tipoIngresso = TipoIngresso.MEIA;
         break;
     } else {
-        System.out.println("Tipo de ingresso inválido. Tente denovo!\n");
+        System.out.println("Tipo de ingresso inválido! Tente denovo.\n");
         tipoInt = leitor.nextInt();
     }
     }
