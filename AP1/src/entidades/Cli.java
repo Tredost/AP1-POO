@@ -94,45 +94,6 @@ public static Evento cadastrarEvento(Scanner leitor) {
     }
 }
 
-/* public static void mostrarEvento(Evento evento) {
-    if (evento instanceof Show) {
-        Show show = (Show) evento;
-        System.out.println("Nome: " + show.getNomeEvento());
-        System.out.println("Data: " + show.getDataEvento());
-        System.out.println("Local: " + show.getLocalEvento());
-        System.out.println("Ings. Inteira: " + show.getIngressosInteira());
-        System.out.println("Ings. Meia: " + show.getIngressosMeia());
-        System.out.println("Valor: " + show.getPrecoCheio());
-        System.out.println("Artista: " + show.getNomeArtista());
-        System.out.println("Gênero musical: " + show.getGeneroMusical());
-
-    } else if (evento instanceof Exposicao) {
-
-        Exposicao expo = (Exposicao) evento;
-        System.out.println("Nome: " + expo.getNomeEvento());
-        System.out.println("Data: " + expo.getDataEvento());
-        System.out.println("Local: " + expo.getLocalEvento());
-        System.out.println("Ings. Inteira: " + expo.getIngressosInteira());
-        System.out.println("Ings. Meia: " + expo.getIngressosMeia());
-        System.out.println("Valor: " + expo.getPrecoCheio());
-        System.out.println("Idade mínima: " + expo.getIdadeMinima());
-        System.out.println("Duração: " + expo.getDuracaoDias());
-
-    } else if (evento instanceof Jogo) {
-        Jogo jogo = (Jogo) evento;
-        System.out.println("Nome: " + jogo.getNomeEvento());
-        System.out.println("Data: " + jogo.getDataEvento());
-        System.out.println("Local: " + jogo.getLocalEvento());
-        System.out.println("Ings. Inteira: " + jogo.getIngressosInteira());
-        System.out.println("Ings. Meia: " + jogo.getIngressosMeia());
-        System.out.println("Valor: " + jogo.getPrecoCheio());
-        System.out.println("Esporte: " + jogo.getEsporte());
-        System.out.println("Equipe 1: " + jogo.getEquipe1());
-        System.out.println("Equipe 2: " + jogo.getEquipe2());
-    }
-    else { System.out.println("Tipo de evento desconhecido"); }
-} */
-
 public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
     Ingresso ingresso = null;
     int confirmacao;
@@ -165,7 +126,6 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             break;
         }
     }
-
 
     if (!evento.isIngressoDisponivel(tipoIngresso, quantidade)) {
         System.out.println("Não existem ingressos disponíveis para sua compra :(\n");
