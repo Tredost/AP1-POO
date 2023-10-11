@@ -299,8 +299,9 @@ public static void consultarIngressosRestantes(Evento evento) {
     "\nQuantidade de ingressos meia restante: " + evento.getIngressosMeia() + "\n");
 }
 
-public static void informaçaoUltimaVenda (Ingresso ingresso) {
-    System.out.println(ingresso);
+public static void informaçaoUltimaVenda (Evento evento, Ingresso ingresso) {
+    System.out.println(evento.getNomeEvento() + "\n" + evento.getLocalEvento() + "\n" + evento.getDataEvento());
+    System.out.println(ingresso) ;
 }
 
 }
