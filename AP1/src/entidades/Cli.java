@@ -192,7 +192,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                 descontoInt = leitor.nextInt();
             }
             }
-            System.out.println("as");
+
             ingresso = new IngExpo(evento, tipoIngresso, descontoSocial);
             emitirRecibo(evento, ingresso, tipoIngresso, quantidade);
             return ingresso;
@@ -209,9 +209,8 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             else {
                 break;
             }
-
             }
-
+            
             ingresso = new IngJogo(evento, tipoIngresso, descontoTorcedor);
             emitirRecibo(evento, ingresso, tipoIngresso, quantidade);
             return ingresso;
