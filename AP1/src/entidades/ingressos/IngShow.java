@@ -36,8 +36,6 @@ public class IngShow extends Ingresso {
     public void setEspacoEnum(EspacoEnum novoEspaco) {
         this.espacoEnum = novoEspaco;
     }
-
-
 }
 
 
