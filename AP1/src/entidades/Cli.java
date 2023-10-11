@@ -141,12 +141,12 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
     int quantidade = leitor.nextInt();
 
     while (true) {
-    if (quantidade <= 0) {
-        System.out.println("Quantidade inválida! Tente novamente.\n");
-        quantidade = leitor.nextInt();
-    } else {
-        break;
-    }
+        if (quantidade <= 0) {
+            System.out.println("Quantidade inválida! Tente novamente.\n");
+            quantidade = leitor.nextInt();
+        } else {
+            break;
+        }
     }
 
     System.out.println("Qual o tipo de ingresso deseja comprar?\n  1 - INTEIRA\n  2 - MEIA\n");
@@ -154,16 +154,16 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
     int tipoInt = leitor.nextInt();
 
     while (true) {
-    if (tipoInt == 1) {
-        tipoIngresso = TipoIngresso.INTEIRA;
-        break;
-    } else if (tipoInt == 2) {
-        tipoIngresso = TipoIngresso.MEIA;
-        break;
-    } else {
-        System.out.println("Tipo de ingresso inválido! Tente novamente.\n");
-        tipoInt = leitor.nextInt();
-    }
+        if (tipoInt == 1) {
+            tipoIngresso = TipoIngresso.INTEIRA;
+            break;
+        } else if (tipoInt == 2) {
+            tipoIngresso = TipoIngresso.MEIA;
+            break;
+        } else {
+            System.out.println("Tipo de ingresso inválido! Tente novamente.\n");
+            tipoInt = leitor.nextInt();
+        }
     }
 
     if (!evento.isIngressoDisponivel(tipoIngresso, quantidade)) {
@@ -179,16 +179,16 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             boolean descontoSocial;
 
             while (true) {
-            if (descontoInt == 1) {
-                descontoSocial = true;
-                break;
-            } else if (descontoInt == 2) {
-                descontoSocial = false;
-                break;
-            } else {
-                System.out.println("Opção inválida! Tente novamente.\n");
-                descontoInt = leitor.nextInt();
-            }
+                if (descontoInt == 1) {
+                    descontoSocial = true;
+                    break;
+                } else if (descontoInt == 2) {
+                    descontoSocial = false;
+                    break;
+                } else {
+                    System.out.println("Opção inválida! Tente novamente.\n");
+                    descontoInt = leitor.nextInt();
+                }
             }
 
             ingresso = new IngExpo(evento, tipoIngresso, descontoSocial);
@@ -215,12 +215,12 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             double descontoTorcedor = leitor.nextDouble();
 
             while (true) {
-            if (descontoTorcedor < 0) {
-                System.out.println("Valor inválido! Tente novamente.\n");
-                descontoTorcedor = leitor.nextInt(); }
-            else {
-                break;
-            }
+                if (descontoTorcedor < 0) {
+                    System.out.println("Valor inválido! Tente novamente.\n");
+                    descontoTorcedor = leitor.nextInt(); }
+                else {
+                    break;
+                }
             }
             
             ingresso = new IngJogo(evento, tipoIngresso, descontoTorcedor);
@@ -250,15 +250,16 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             int espacoInt = leitor.nextInt();
 
             while (true) {
-            if (espacoInt == 1) {
-                espacoEnum = EspacoEnum.PISTA;
-                break;
-            } else if (espacoInt == 2) {
-                espacoEnum = EspacoEnum.CAMAROTE;
-                break;
-            } else {
-                System.out.println("Espaço inválido! Tente novamente.\n"); }
-                espacoInt = leitor.nextInt();
+                if (espacoInt == 1) {
+                    espacoEnum = EspacoEnum.PISTA;
+                    break;
+                } else if (espacoInt == 2) {
+                    espacoEnum = EspacoEnum.CAMAROTE;
+                    break;
+                } else {
+                    System.out.println("Espaço inválido! Tente novamente.\n"); 
+                    espacoInt = leitor.nextInt();
+                }
             }
 
             ingresso = new IngShow(evento, tipoIngresso, espacoEnum);
