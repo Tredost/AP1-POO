@@ -37,7 +37,6 @@ public abstract class Ingresso {
     public void setTipoIngresso(TipoIngresso novoTipoIngresso) {
         this.tipoIngresso = novoTipoIngresso;
     }
-
 }
 
 

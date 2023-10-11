@@ -89,7 +89,7 @@ public static Evento cadastrarEvento(Scanner leitor) {
             return new Show(nomeEvento, dataEvento, localEvento, ingressosInteira, ingressosMeia, precoCheio, nomeArtista, generoMusical);
 
         default:
-        
+
             return evento;
     }
 }
@@ -195,7 +195,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             ingresso = new IngExpo(evento, tipoIngresso, descontoSocial);
             System.out.println("CONFIMA AS INFORMAÇÕES A SEGUIR:\n" +  ingresso + "\n  1 - SIM\n  2 - NÃO\n");
             confirmacao = leitor.nextInt();
-            
+
             while (true) {
                 if (confirmacao == 1) {
                     break;
@@ -223,12 +223,12 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                     break;
                 }
             }
-            
+
             ingresso = new IngJogo(evento, tipoIngresso, descontoTorcedor);
 
             System.out.println("CONFIMA AS INFORMAÇÕES A SEGUIR:\n" +  ingresso + "\n  1 - SIM\n  2 - NÃO\n");
             confirmacao = leitor.nextInt();
-            
+
             while (true) {
                 if (confirmacao == 1) {
                     break;
@@ -258,7 +258,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                     espacoEnum = EspacoEnum.CAMAROTE;
                     break;
                 } else {
-                    System.out.println("Espaço inválido! Tente novamente.\n"); 
+                    System.out.println("Espaço inválido! Tente novamente.\n");
                     espacoInt = leitor.nextInt();
                 }
             }
@@ -267,7 +267,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
 
             System.out.println("CONFIMA AS INFORMAÇÕES A SEGUIR:\n" +  ingresso + "\n  1 - SIM\n  2 - NÃO\n");
             confirmacao = leitor.nextInt();
-            
+
             while (true) {
                 if (confirmacao == 1) {
                     break;
@@ -299,7 +299,7 @@ public static void consultarIngressosRestantes(Evento evento) {
     "\nQuantidade de ingressos meia restante: " + evento.getIngressosMeia() + "\n");
 }
 
-public static void informaçaoUltimaVenda (Evento evento, Ingresso ingresso) {
+public static void informacaoUltimaVenda (Evento evento, Ingresso ingresso) {
     System.out.println(evento.getNomeEvento() + "\n" + evento.getLocalEvento() + "\n" + evento.getDataEvento());
     System.out.println(ingresso) ;
 }

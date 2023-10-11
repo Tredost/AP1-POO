@@ -46,7 +46,7 @@ public class App {
 
                 case 5:
                     if (ingresso != null) {
-                        entidades.Cli.informaçaoUltimaVenda(evento, ingresso); }
+                        entidades.Cli.informacaoUltimaVenda(evento, ingresso); }
                     else {
                         System.out.println("COMPRE UM INGRESSO PRIMEIRO!\n");
                     }
