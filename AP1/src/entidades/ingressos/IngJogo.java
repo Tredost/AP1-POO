@@ -39,7 +39,6 @@ public class IngJogo extends Ingresso {
         this.percentualDescontoTorcedor = novoDesconto;
     }
 
-
 }
 
 
