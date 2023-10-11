@@ -23,7 +23,7 @@ public class IngExpo extends Ingresso{
     @Override
     public String toString() {
         return "Ingresso: " + super.toString() + "\n" +
-            "Desconto Social: " + this.descontoSocial;
+            "Desconto Social: " + this.descontoSocial + "\n";
     }
 
     // GETTERS

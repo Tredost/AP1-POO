@@ -16,7 +16,6 @@ public abstract class Ingresso {
 
     public String toString() {
         return "Tipo do ingresso: " + this.tipoIngresso;
-        
     }
 
     // GETTERS

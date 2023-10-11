@@ -135,13 +135,14 @@ public static Evento cadastrarEvento(Scanner leitor) {
 
 public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
     Ingresso ingresso = null;
+    int confirmacao;
 
     System.out.println("Quantos ingressos deseja?\n");
     int quantidade = leitor.nextInt();
 
     while (true) {
     if (quantidade <= 0) {
-        System.out.println("Quantidade inválida! Tente denovo.\n");
+        System.out.println("Quantidade inválida! Tente novamente.\n");
         quantidade = leitor.nextInt();
     } else {
         break;
@@ -160,7 +161,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
         tipoIngresso = TipoIngresso.MEIA;
         break;
     } else {
-        System.out.println("Tipo de ingresso inválido! Tente denovo.\n");
+        System.out.println("Tipo de ingresso inválido! Tente novamente.\n");
         tipoInt = leitor.nextInt();
     }
     }
@@ -185,12 +186,27 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                 descontoSocial = false;
                 break;
             } else {
-                System.out.println("Opção inválida! Tente denovo.\n");
+                System.out.println("Opção inválida! Tente novamente.\n");
                 descontoInt = leitor.nextInt();
             }
             }
 
             ingresso = new IngExpo(evento, tipoIngresso, descontoSocial);
+            System.out.println("CONFIMA AS INFORMAÇÕES A SEGUIR:\n" +  ingresso + "\n  1 - SIM\n  2 - NÃO\n");
+            confirmacao = leitor.nextInt();
+            
+            while (true) {
+                if (confirmacao == 1) {
+                    break;
+                } else if (confirmacao == 2) {
+                    ingresso = null;
+                    return ingresso;
+                } else {
+                    System.out.println("Opção inválida! Tente novamente.\n");
+                    confirmacao = leitor.nextInt();
+                }
+            }
+
             emitirRecibo(evento, ingresso, tipoIngresso, quantidade);
             return ingresso;
 
@@ -200,7 +216,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
 
             while (true) {
             if (descontoTorcedor < 0) {
-                System.out.println("Valor inválido! Tente denovo.\n");
+                System.out.println("Valor inválido! Tente novamente.\n");
                 descontoTorcedor = leitor.nextInt(); }
             else {
                 break;
@@ -208,6 +224,23 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             }
             
             ingresso = new IngJogo(evento, tipoIngresso, descontoTorcedor);
+
+            System.out.println("CONFIMA AS INFORMAÇÕES A SEGUIR:\n" +  ingresso + "\n  1 - SIM\n  2 - NÃO\n");
+            confirmacao = leitor.nextInt();
+            
+            while (true) {
+                if (confirmacao == 1) {
+                    break;
+                } else if (confirmacao == 2) {
+                    ingresso = null;
+                    return ingresso;
+                } else {
+                    System.out.println("Opção inválida! Tente novamente.\n");
+                    confirmacao = leitor.nextInt();
+                }
+            }
+
+
             emitirRecibo(evento, ingresso, tipoIngresso, quantidade);
             return ingresso;
 
@@ -229,6 +262,22 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             }
 
             ingresso = new IngShow(evento, tipoIngresso, espacoEnum);
+
+            System.out.println("CONFIMA AS INFORMAÇÕES A SEGUIR:\n" +  ingresso + "\n  1 - SIM\n  2 - NÃO\n");
+            confirmacao = leitor.nextInt();
+            
+            while (true) {
+                if (confirmacao == 1) {
+                    break;
+                } else if (confirmacao == 2) {
+                    ingresso = null;
+                    return ingresso;
+                } else {
+                    System.out.println("Opção inválida! Tente novamente.\n");
+                    confirmacao = leitor.nextInt();
+                }
+            }
+
             emitirRecibo(evento, ingresso, tipoIngresso, quantidade);
             return ingresso;
 
