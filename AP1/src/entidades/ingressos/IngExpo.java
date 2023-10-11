@@ -22,13 +22,12 @@ public class IngExpo extends Ingresso{
 
     @Override
     public String toString() {
-        if (this.descontoSocial == true){
+        if (this.descontoSocial){
         return "Ingresso: " + super.toString() + "\n" +
-            "Desconto Social: ativo" + "\n";
-        }
-        else{
+            "Desconto Social: SIM" + "\n";
+        } else {
             return "Ingresso: " + super.toString() + "\n" +
-            "Desconto Social: desativo" + "\n";
+            "Desconto Social: NÃO" + "\n";
         }
     }
 

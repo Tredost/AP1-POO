@@ -30,7 +30,7 @@ public class App {
 
                 case 3:
                     if (evento != null) {
-                        System.out.println(evento); }
+                        System.out.println("Informações:\n" + evento); }
                     else {
                         System.out.println("CADASTRE UM EVENTO PRIMEIRO!\n");
                     }
