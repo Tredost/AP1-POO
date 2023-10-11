@@ -1,7 +1,5 @@
 package entidades.eventos;
 
-import entidades.ingressos.IngJogo;
-import entidades.ingressos.TipoIngresso;
 
 public class Jogo extends Evento {
     private String esporte, equipe1, equipe2;

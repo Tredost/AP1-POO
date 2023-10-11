@@ -1,8 +1,5 @@
 package entidades.eventos;
 
-import entidades.ingressos.IngShow;
-import entidades.ingressos.IngShow.EspacoEnum;
-import entidades.ingressos.TipoIngresso;
 
 public class Show extends Evento {
     private String nomeArtista, generoMusical;

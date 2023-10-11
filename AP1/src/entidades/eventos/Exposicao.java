@@ -1,7 +1,5 @@
 package entidades.eventos;
 
-import entidades.ingressos.TipoIngresso;
-import entidades.ingressos.IngExpo;
 
 public class Exposicao extends Evento {
     private int idadeMinima, duracaoDias;
