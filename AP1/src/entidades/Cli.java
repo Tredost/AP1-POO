@@ -28,7 +28,7 @@ public static Evento cadastrarEvento(Scanner leitor) {
         } else {
             break;
         }
-        }
+    }
 
     leitor.nextLine();
 
@@ -92,8 +92,6 @@ public static Evento cadastrarEvento(Scanner leitor) {
         
             return evento;
     }
-
-
 }
 
 /* public static void mostrarEvento(Evento evento) {
@@ -137,7 +135,6 @@ public static Evento cadastrarEvento(Scanner leitor) {
 
 public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
     Ingresso ingresso = null;
-
 
     System.out.println("Quantos ingressos deseja?\n");
     int quantidade = leitor.nextInt();
@@ -197,7 +194,6 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             emitirRecibo(evento, ingresso, tipoIngresso, quantidade);
             return ingresso;
 
-
         case "Jogo":
             System.out.println("Se possui desconto torcedor digite aqui!\n");
             double descontoTorcedor = leitor.nextDouble();
@@ -237,7 +233,6 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             return ingresso;
 
         default:
-            System.out.println("OPÇÃO NÃO EXISTE!\n");
             return ingresso;
         }
 }

@@ -113,6 +113,10 @@ public abstract class Evento {
         this.precoCheio = novoPreco;
     }
 
+    public void setTipo(String novoTipo) {
+        this.tipo = novoTipo;
+    }
+
 }
 
 
