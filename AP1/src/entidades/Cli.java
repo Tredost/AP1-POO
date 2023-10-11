@@ -22,7 +22,7 @@ public static Evento cadastrarEvento(Scanner leitor) {
     int tipoEvento = leitor.nextInt();
 
     while (true) {
-        if (tipoEvento <= 0 && tipoEvento > 3) {
+        if (tipoEvento <= 0 || tipoEvento > 3) {
             System.out.println("Opção inválida! Tente denovo.\n");
             tipoEvento = leitor.nextInt();
         } else {
