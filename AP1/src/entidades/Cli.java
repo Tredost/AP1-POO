@@ -137,18 +137,6 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
     Ingresso ingresso = null;
     int confirmacao;
 
-    System.out.println("Quantos ingressos deseja?\n");
-    int quantidade = leitor.nextInt();
-
-    while (true) {
-        if (quantidade <= 0) {
-            System.out.println("Quantidade inválida! Tente novamente.\n");
-            quantidade = leitor.nextInt();
-        } else {
-            break;
-        }
-    }
-
     System.out.println("Qual o tipo de ingresso deseja comprar?\n  1 - INTEIRA\n  2 - MEIA\n");
     TipoIngresso tipoIngresso;
     int tipoInt = leitor.nextInt();
@@ -165,6 +153,19 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             tipoInt = leitor.nextInt();
         }
     }
+
+    System.out.println("Quantos ingressos deseja?\n");
+    int quantidade = leitor.nextInt();
+
+    while (true) {
+        if (quantidade <= 0) {
+            System.out.println("Quantidade inválida! Tente novamente.\n");
+            quantidade = leitor.nextInt();
+        } else {
+            break;
+        }
+    }
+
 
     if (!evento.isIngressoDisponivel(tipoIngresso, quantidade)) {
         System.out.println("Não existem ingressos disponíveis para sua compra :(\n");
