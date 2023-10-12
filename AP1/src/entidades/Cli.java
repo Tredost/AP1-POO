@@ -153,7 +153,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             }
 
             ingresso = new IngExpo(evento, tipoIngresso, descontoSocial);
-            System.out.println("CONFIMA AS INFORMAÇÕES A SEGUIR:\n\n" +  ingresso + "\n  1 - SIM\n  2 - NÃO\n");
+            System.out.println("CONFIMA AS INFORMAÇÕES A SEGUIR:\n\nQuantidade: " + quantidade + "\n" +  ingresso + "\n  1 - SIM\n  2 - NÃO\n");
             confirmacao = leitor.nextInt();
 
             while (true) {
@@ -187,7 +187,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
 
             ingresso = new IngJogo(evento, tipoIngresso, descontoTorcedor);
 
-            System.out.println("CONFIMA AS INFORMAÇÕES A SEGUIR:\n\n" +  ingresso + "\n  1 - SIM\n  2 - NÃO\n");
+            System.out.println("CONFIMA AS INFORMAÇÕES A SEGUIR:\n\nQuantidade: " + quantidade + "\n" + ingresso + "\n  1 - SIM\n  2 - NÃO\n");
             confirmacao = leitor.nextInt();
 
             while (true) {
@@ -227,7 +227,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
 
             ingresso = new IngShow(evento, tipoIngresso, espacoEnum);
 
-            System.out.println("CONFIMA AS INFORMAÇÕES A SEGUIR:\n\n" +  ingresso + "\n  1 - SIM\n  2 - NÃO\n");
+            System.out.println("CONFIMA AS INFORMAÇÕES A SEGUIR:\n\nQuantidade: " + quantidade + "\n" +  ingresso + "\n  1 - SIM\n  2 - NÃO\n");
             confirmacao = leitor.nextInt();
 
             while (true) {
