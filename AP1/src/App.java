@@ -9,7 +9,7 @@ public class App {
         Ingresso ingresso = null;
 
         while (true) {
-            System.out.println("O que deseja fazer?\n  1 - Cadastrar novo evento\n  2 - Comprar ingressos\n  3 - Informações do evento\n  4 - Informações sobre quantidade de ingressos restantes\n  5 - Informações do último ingresso vendido\n");
+            System.out.println("O que deseja fazer?\n  1 - Cadastrar novo evento\n  2 - Comprar ingressos\n  3 - Informações do evento\n  4 - Informações sobre quantidade de ingressos restantes\n  5 - Informações da última venda\n");
             int opcao = leitor.nextInt();
 
             switch (opcao) {

@@ -13,7 +13,7 @@ import entidades.ingressos.IngShow.EspacoEnum;
 
 public class Cli {
 Scanner leitor = new Scanner(System.in);
-
+int quantidade;
 
 public static Evento cadastrarEvento(Scanner leitor) {
     Evento evento = null;
@@ -97,6 +97,7 @@ public static Evento cadastrarEvento(Scanner leitor) {
 public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
     Ingresso ingresso = null;
     int confirmacao;
+    int quantidade;
 
     System.out.println("Qual o tipo de ingresso deseja comprar?\n  1 - INTEIRA\n  2 - MEIA\n");
     TipoIngresso tipoIngresso;
@@ -116,7 +117,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
     }
 
     System.out.println("Quantos ingressos deseja?\n");
-    int quantidade = leitor.nextInt();
+    quantidade = leitor.nextInt();
 
     while (true) {
         if (quantidade <= 0) {
@@ -265,6 +266,7 @@ public static void consultarIngressosRestantes(Evento evento) {
 public static void informacaoUltimaVenda (Evento evento, Ingresso ingresso) {
     System.out.println(evento.getTipo() + ": " + evento.getNomeEvento() + "\nLocal: " + evento.getLocalEvento() + "\nData: " + evento.getDataEvento());
     System.out.println(ingresso);
+    
 }
 
 }
