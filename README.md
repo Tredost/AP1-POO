@@ -1,4 +1,4 @@
-# ​​<strong>🛠️ AP1 de Programação Orientada a Objeto</strong>
+# ​​<strong>🛠️ AP1 de Programação Orientada a Objetos</strong>
 
 Objetivo: Desenvolver um aplicativo para venda de ingressos online para eventos.<br> 
 Material de apio: https://victor0machado.github.io/poo/pedido_ap1.html
