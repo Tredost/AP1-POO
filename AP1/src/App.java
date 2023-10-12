@@ -9,7 +9,7 @@ public class App {
         Ingresso ingresso = null;
 
         while (true) {
-            System.out.println("O que deseja fazer?\n  1 - Cadastrar novo evento\n  2 - Comprar ingressos\n  3 - Informações do evento\n  4 - Informações sobre quantidade de ingressos restantes\n  5 - Informações do ultimo ingresso vendido\n");
+            System.out.println("O que deseja fazer?\n  1 - Cadastrar novo evento\n  2 - Comprar ingressos\n  3 - Informações do evento\n  4 - Informações sobre quantidade de ingressos restantes\n  5 - Informações do último ingresso vendido\n");
             int opcao = leitor.nextInt();
 
             switch (opcao) {
@@ -27,7 +27,7 @@ public class App {
 
                 case 3:
                     if (evento != null) {
-                        System.out.println("Informações:\n" + evento);
+                        System.out.println(evento);
                     } else {
                         System.out.println("CADASTRE UM EVENTO PRIMEIRO!\n");
                     }
