@@ -21,7 +21,7 @@ public class IngShow extends Ingresso {
 
     @Override
     public String toString() {
-        return "Ingresso: " + super.toString() + "\n" +
+        return super.toString() + "\n" +
             "Local: " + this.espacoEnum + "\n";
     }
 
