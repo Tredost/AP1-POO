@@ -160,6 +160,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                 if (confirmacao == 1) {
                     break;
                 } else if (confirmacao == 2) {
+                    System.out.println("Compra cancelada!\n");
                     ingresso = null;
                     return ingresso;
                 } else {
@@ -193,6 +194,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                 if (confirmacao == 1) {
                     break;
                 } else if (confirmacao == 2) {
+                    System.out.println("Compra cancelada!\n");
                     ingresso = null;
                     return ingresso;
                 } else {
@@ -232,6 +234,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                 if (confirmacao == 1) {
                     break;
                 } else if (confirmacao == 2) {
+                    System.out.println("Compra cancelada!\n");
                     ingresso = null;
                     return ingresso;
                 } else {
@@ -255,8 +258,8 @@ public static void emitirRecibo(Evento evento, Ingresso ingresso, TipoIngresso t
 }
 
 public static void consultarIngressosRestantes(Evento evento) {
-    System.out.println("Quantidade de ingressos inteiras restante: "+ evento.getIngressosInteira() +
-    "\nQuantidade de ingressos meia restante: " + evento.getIngressosMeia() + "\n");
+    System.out.println("Quantidade de ingressos inteiras restantes: "+ evento.getIngressosInteira() +
+    "\nQuantidade de ingressos meia restantes: " + evento.getIngressosMeia() + "\n");
 }
 
 public static void informacaoUltimaVenda (Evento evento, Ingresso ingresso) {
