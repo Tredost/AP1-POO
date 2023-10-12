@@ -22,32 +22,32 @@ public class App {
                     break;
                 case 2:
                     if (evento != null) {
-                        ingresso = entidades.Cli.comprarIngresso(leitor, evento); }
-                    else {
+                        ingresso = entidades.Cli.comprarIngresso(leitor, evento);
+                    } else {
                         System.out.println("CADASTRE UM EVENTO PRIMEIRO!\n");
                     }
                     break;
 
                 case 3:
                     if (evento != null) {
-                        System.out.println("Informações:\n" + evento); }
-                    else {
+                        System.out.println("Informações:\n" + evento);
+                    } else {
                         System.out.println("CADASTRE UM EVENTO PRIMEIRO!\n");
                     }
                     break;
 
                 case 4:
                     if (evento != null) {
-                        entidades.Cli.consultarIngressosRestantes(evento); }
-                    else {
+                        entidades.Cli.consultarIngressosRestantes(evento);
+                    } else {
                         System.out.println("CADASTRE UM EVENTO PRIMEIRO!\n");
                     }
                     break;
 
                 case 5:
                     if (ingresso != null) {
-                        entidades.Cli.informacaoUltimaVenda(evento, ingresso); }
-                    else {
+                        entidades.Cli.informacaoUltimaVenda(evento, ingresso);
+                    } else {
                         System.out.println("COMPRE UM INGRESSO PRIMEIRO!\n");
                     }
                     break;
