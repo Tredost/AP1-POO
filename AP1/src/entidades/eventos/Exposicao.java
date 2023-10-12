@@ -16,8 +16,8 @@ public class Exposicao extends Evento {
     @Override
     public String toString() {
         return "\nExposição: " + super.toString() + "\n" +
-            "Idade mínima recomendada: " + this.idadeMinima + "\n" +
-            "Duração: " + this.duracaoDias + " dias" + "\n";
+            "Idade mínima recomendada: " + this.idadeMinima + " anos\n" +
+            "Duração: " + this.duracaoDias + " dias\n";
     }
 
     // GETTERS

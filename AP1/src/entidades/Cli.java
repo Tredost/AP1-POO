@@ -263,8 +263,8 @@ public static void consultarIngressosRestantes(Evento evento) {
 }
 
 public static void informacaoUltimaVenda (Evento evento, Ingresso ingresso) {
-    System.out.println(evento.getNomeEvento() + "\n" + evento.getLocalEvento() + "\n" + evento.getDataEvento());
-    System.out.println(ingresso) ;
+    System.out.println(evento.getTipo() + ": " + evento.getNomeEvento() + "\nLocal: " + evento.getLocalEvento() + "\nData: " + evento.getDataEvento());
+    System.out.println(ingresso);
 }
 
 }
