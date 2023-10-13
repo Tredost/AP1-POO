@@ -49,7 +49,7 @@ public class App {
                     if (ultimaVenda != null) {
                         Cli.informacaoUltimaVenda(evento, ultimaVenda);
                     } else {
-                        System.out.println("COMPRE UM INGRESSO PRIMEIRO!\n");
+                        System.out.println("NENHUM INGRESSO VENDIDO!\n");
                     }
                     break;
 
