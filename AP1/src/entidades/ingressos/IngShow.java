@@ -5,8 +5,8 @@ public class IngShow extends Ingresso {
     public enum EspacoEnum { PISTA, CAMAROTE };
     private EspacoEnum espacoEnum;
 
-    public IngShow(Evento evento, TipoIngresso tipoIngresso, EspacoEnum espacoEnum) {
-        super(evento, tipoIngresso);
+    public IngShow(Evento evento, TipoIngresso tipoIngresso, int quantidade, EspacoEnum espacoEnum) {
+        super(evento, tipoIngresso, quantidade);
         this.espacoEnum = espacoEnum;
     }
 

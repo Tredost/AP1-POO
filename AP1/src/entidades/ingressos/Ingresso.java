@@ -4,10 +4,12 @@ import entidades.eventos.Evento;
 public abstract class Ingresso {
     private Evento evento;
     private TipoIngresso tipoIngresso;
+    private int quantidade;
 
-    public Ingresso(Evento evento, TipoIngresso tipoIngresso) {
+    public Ingresso(Evento evento, TipoIngresso tipoIngresso, int quantidade) {
         this.evento = evento;
         this.tipoIngresso = tipoIngresso;
+        this.quantidade = quantidade;
     }
 
     public abstract double getPreco();
@@ -28,6 +30,10 @@ public abstract class Ingresso {
         return this.tipoIngresso;
     }
 
+    public int getQuantidade() {
+        return this.quantidade;
+    }
+
     // SETTERS
 
     public void setEvento(Evento novoEvento) {
@@ -37,6 +43,11 @@ public abstract class Ingresso {
     public void setTipoIngresso(TipoIngresso novoTipoIngresso) {
         this.tipoIngresso = novoTipoIngresso;
     }
+
+    public void setQuantidade(int novaQntd) {
+        this.quantidade = novaQntd;
+    }
+
 }
 
 

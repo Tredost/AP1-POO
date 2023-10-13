@@ -4,8 +4,8 @@ import entidades.eventos.Evento;
 public class IngJogo extends Ingresso {
     private double percentualDescontoTorcedor, percentualDescontoTorcedorOriginal;
 
-    public IngJogo(Evento evento, TipoIngresso tipoIngresso, double descontoTorcedor){
-        super(evento, tipoIngresso);
+    public IngJogo(Evento evento, TipoIngresso tipoIngresso, int quantidade, double descontoTorcedor){
+        super(evento, tipoIngresso, quantidade);
         this.percentualDescontoTorcedor = descontoTorcedor;
         this.percentualDescontoTorcedorOriginal = descontoTorcedor;
     }
