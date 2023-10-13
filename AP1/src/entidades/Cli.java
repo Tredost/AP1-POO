@@ -13,7 +13,7 @@ import entidades.ingressos.IngShow.EspacoEnum;
 
 public class Cli {
 Scanner leitor = new Scanner(System.in);
-static int quantidadeIngressoUltimaVenda = 0;
+static int quantidade = 0;
 
 
 public static Evento cadastrarEvento(Scanner leitor) {
@@ -117,7 +117,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
     }
 
     System.out.println("Quantos ingressos deseja?\n");
-    int quantidade = leitor.nextInt();
+    quantidade = leitor.nextInt();
 
     while (true) {
         if (quantidade <= 0) {
@@ -170,7 +170,6 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                 }
             }
 
-            quantidadeIngressoUltimaVenda = quantidade;
             emitirRecibo(evento, ingresso, tipoIngresso, quantidade);
             return ingresso;
 
@@ -205,7 +204,6 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                 }
             }
 
-            quantidadeIngressoUltimaVenda = quantidade;
             emitirRecibo(evento, ingresso, tipoIngresso, quantidade);
             return ingresso;
 
@@ -245,7 +243,6 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                 }
             }
 
-            quantidadeIngressoUltimaVenda = quantidade;
             emitirRecibo(evento, ingresso, tipoIngresso, quantidade);
             return ingresso;
 
@@ -266,7 +263,7 @@ public static void consultarIngressosRestantes(Evento evento) {
 }
 
 public static void informacaoUltimaVenda (Evento evento, Ingresso ingresso) {
-    System.out.println(evento.getTipo() + ": " + evento.getNomeEvento() + "\nLocal: " + evento.getLocalEvento() + "\nData: " + evento.getDataEvento() + "\nQuantidade de ingressos vendidos: " + quantidadeIngressoUltimaVenda);
+    System.out.println(evento.getTipo() + ": " + evento.getNomeEvento() + "\nLocal: " + evento.getLocalEvento() + "\nData: " + evento.getDataEvento() + "\nQuantidade de ingressos vendidos: " + quantidade);
     System.out.println(ingresso);
 }
 
