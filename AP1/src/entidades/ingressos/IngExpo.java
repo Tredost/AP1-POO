@@ -4,8 +4,8 @@ import entidades.eventos.Evento;
 public class IngExpo extends Ingresso{
     private boolean descontoSocial;
 
-    public IngExpo(Evento evento, TipoIngresso tipoIngresso, int quantidade, boolean descontoSocial) {
-        super(evento, tipoIngresso, quantidade);
+    public IngExpo(Evento evento, TipoIngresso tipoIngresso, boolean descontoSocial) {
+        super(evento, tipoIngresso);
         this.descontoSocial = descontoSocial;
     }
 

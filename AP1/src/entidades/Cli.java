@@ -13,6 +13,7 @@ import entidades.ingressos.IngShow.EspacoEnum;
 
 public class Cli {
 Scanner leitor = new Scanner(System.in);
+static int quantidade;
 
 public static Evento cadastrarEvento(Scanner leitor) {
     Evento evento = null;
@@ -96,7 +97,6 @@ public static Evento cadastrarEvento(Scanner leitor) {
 public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
     Ingresso ingresso = null;
     int confirmacao;
-    int quantidade;
 
     System.out.println("Qual o tipo de ingresso deseja comprar?\n  1 - INTEIRA\n  2 - MEIA\n");
     TipoIngresso tipoIngresso;
@@ -152,7 +152,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                 }
             }
 
-            ingresso = new IngExpo(evento, tipoIngresso, quantidade, descontoSocial);
+            ingresso = new IngExpo(evento, tipoIngresso, descontoSocial);
             System.out.println("Confirma as informações a seguir?\n\nQuantidade: " + quantidade + "\n" +  ingresso + "\n  1 - SIM\n  2 - NÃO\n");
             confirmacao = leitor.nextInt();
 
@@ -185,7 +185,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                 }
             }
 
-            ingresso = new IngJogo(evento, tipoIngresso, quantidade, descontoTorcedor);
+            ingresso = new IngJogo(evento, tipoIngresso, descontoTorcedor);
 
             System.out.println("Confirma as informações a seguir?\n\nQuantidade: " + quantidade + "\n" + ingresso + "\n  1 - SIM\n  2 - NÃO\n");
             confirmacao = leitor.nextInt();
@@ -225,7 +225,7 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                 }
             }
 
-            ingresso = new IngShow(evento, tipoIngresso, quantidade, espacoEnum);
+            ingresso = new IngShow(evento, tipoIngresso, espacoEnum);
 
             System.out.println("Confirma as informações a seguir?\n\nQuantidade: " + quantidade + "\n" +  ingresso + "\n  1 - SIM\n  2 - NÃO\n");
             confirmacao = leitor.nextInt();
@@ -263,7 +263,7 @@ public static void consultarIngressosRestantes(Evento evento) {
 }
 
 public static void informacaoUltimaVenda (Evento evento, Ingresso ingresso) {
-    System.out.println(evento.getTipo() + ": " + evento.getNomeEvento() + "\nLocal: " + evento.getLocalEvento() + "\nData: " + evento.getDataEvento() + ingresso + "Quantidade: " + ingresso.getQuantidade());
+    System.out.println(evento.getTipo() + ": " + evento.getNomeEvento() + "\nLocal: " + evento.getLocalEvento() + "\nData: " + evento.getDataEvento() + ingresso + "Quantidade: " + quantidade);
 }
 
 }
