@@ -203,7 +203,6 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
                 }
             }
 
-
             emitirRecibo(evento, ingresso, tipoIngresso, quantidade);
             return ingresso;
 
