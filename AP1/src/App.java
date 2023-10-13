@@ -1,8 +1,5 @@
 import java.util.Scanner;
 import entidades.Cli;
-import entidades.eventos.Exposicao;
-import entidades.eventos.Jogo;
-import entidades.eventos.Show;
 import entidades.ingressos.Ingresso;
 import entidades.eventos.Evento;
 public class App {
@@ -19,11 +16,11 @@ public class App {
             switch (opcao) {
 
                 case 1:
-                    evento = entidades.Cli.cadastrarEvento(leitor);
+                    evento = Cli.cadastrarEvento(leitor);
                     break;
                 case 2:
                     if (evento != null) {
-                        ingresso = entidades.Cli.comprarIngresso(leitor, evento);
+                        ingresso = Cli.comprarIngresso(leitor, evento);
                         if (ingresso != null) {
                             ultimaVenda = ingresso;
                         }
@@ -42,7 +39,7 @@ public class App {
 
                 case 4:
                     if (evento != null) {
-                        entidades.Cli.consultarIngressosRestantes(evento);
+                        Cli.consultarIngressosRestantes(evento);
                     } else {
                         System.out.println("CADASTRE UM EVENTO PRIMEIRO!\n");
                     }
@@ -50,7 +47,7 @@ public class App {
 
                 case 5:
                     if (ultimaVenda != null) {
-                        entidades.Cli.informacaoUltimaVenda(evento, ultimaVenda);
+                        Cli.informacaoUltimaVenda(evento, ultimaVenda);
                     } else {
                         System.out.println("COMPRE UM INGRESSO PRIMEIRO!\n");
                     }

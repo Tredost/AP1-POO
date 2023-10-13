@@ -181,8 +181,8 @@ public static Ingresso comprarIngresso(Scanner leitor, Evento evento) {
             while (true) {
                 if (descontoTorcedor < 0) {
                     System.out.println("Valor inválido! Tente novamente.\n");
-                    descontoTorcedor = leitor.nextInt(); }
-                else {
+                    descontoTorcedor = leitor.nextInt();
+                } else {
                     break;
                 }
             }
@@ -266,8 +266,7 @@ public static void consultarIngressosRestantes(Evento evento) {
 }
 
 public static void informacaoUltimaVenda (Evento evento, Ingresso ingresso) {
-    System.out.println(evento.getTipo() + ": " + evento.getNomeEvento() + "\nLocal: " + evento.getLocalEvento() + "\nData: " + evento.getDataEvento() + "\nQuantidade de ingressos vendidos: " + quantidadeIngressoUltimaVenda);
-    System.out.println(ingresso);
+    System.out.println(evento.getTipo() + ": " + evento.getNomeEvento() + "\nLocal: " + evento.getLocalEvento() + "\nData: " + evento.getDataEvento() + "\nQuantidade de ingressos vendidos: " + quantidadeIngressoUltimaVenda + ingresso);
 }
 
 }
